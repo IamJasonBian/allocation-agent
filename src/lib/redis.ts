@@ -9,7 +9,6 @@ export function getRedisClient(): Redis {
     host: process.env.REDIS_HOST || "redis-17054.c99.us-east-1-4.ec2.cloud.redislabs.com",
     port: parseInt(process.env.REDIS_PORT || "17054", 10),
     password: process.env.REDIS_PASSWORD || "",
-    tls: {},
     maxRetriesPerRequest: 3,
     connectTimeout: 5000,
     commandTimeout: 10000,

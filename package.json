@@ -1,19 +1,19 @@
 {
-  "name": "quant-job-tracker",
+  "name": "allocation-agent",
   "version": "1.0.0",
-  "description": "Scrapes Greenhouse job boards for quant firms, diffs against Redis, sends SMS notifications",
+  "description": "Auto-apply agent for job applications across Greenhouse, Lever, and Dover platforms using headful Chrome",
   "type": "module",
   "engines": {
     "node": ">=18.0.0"
   },
   "scripts": {
-    "dev": "netlify dev",
-    "typecheck": "tsc --noEmit"
+    "test-apply": "node scripts/test-apply.mjs",
+    "batch-greenhouse": "node scripts/batch-greenhouse.mjs",
+    "batch-dover": "node scripts/batch-dover.mjs",
+    "lever-apply": "node scripts/lever-apply.mjs",
+    "check-status": "node scripts/check-status.mjs"
   },
   "dependencies": {
-    "@netlify/blobs": "^10.6.0",
-    "@netlify/functions": "^3.0.0",
-    "@sparticuz/chromium": "^143.0.4",
     "ioredis": "^5.4.0",
     "puppeteer-core": "^24.37.3"
   },

@@ -1,6 +1,7 @@
 /**
  * Dynamic resume PDF builder using pdfkit.
  * Reorders skills in TECH SKILLS section to prioritize JD-matched skills.
+ * Adds a RELEVANT TECHNOLOGIES section for niche/specialized JD tech.
  */
 
 import { createWriteStream } from "fs";
@@ -15,11 +16,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
  * Build a tailored resume PDF.
  * @param {string} resumeText - Plain text resume
  * @param {string[]} candidateSkills - Candidate skill keywords
- * @param {{ languages: string[], frameworks: string[], databases: string[], cloud: string[], tools: string[] }} jdStack - Parsed JD tech stack
- * @returns {Promise<{ path: string, matchedSkills: string[] }>}
+ * @param {{ languages: string[], frameworks: string[], databases: string[], cloud: string[], tools: string[], niche?: string[] }} jdStack - Parsed JD tech stack
+ * @returns {Promise<{ path: string, matchedSkills: string[], nicheTech: string[] }>}
  */
 export async function buildResume(resumeText, candidateSkills, jdStack) {
   const allJdSkills = flattenStack(jdStack);
+  const nicheTech = jdStack.niche || [];
 
   // --- Match candidate skills against JD stack (fuzzy: includes in either direction) ---
   const matchedSkills = candidateSkills.filter((cs) => {
@@ -101,6 +103,20 @@ export async function buildResume(resumeText, candidateSkills, jdStack) {
     });
   }
 
+  // --- Inject RELEVANT TECHNOLOGIES section before EDUCATION ---
+  if (nicheTech.length > 0) {
+    const eduIdx = sections.findIndex((s) => s.heading === "EDUCATION");
+    const nicheSection = {
+      heading: "RELEVANT TECHNOLOGIES",
+      lines: [`JD Stack: ${nicheTech.join(", ")}`],
+    };
+    if (eduIdx >= 0) {
+      sections.splice(eduIdx, 0, nicheSection);
+    } else {
+      sections.push(nicheSection);
+    }
+  }
+
   // --- Generate PDF ---
   const outPath = resolve(__dirname, "..", "..", "blob", "resume_tmp.pdf");
   const doc = new PDFDocument({ size: "LETTER", margins: { top: 45, bottom: 45, left: 55, right: 55 } });
@@ -159,5 +175,5 @@ export async function buildResume(resumeText, candidateSkills, jdStack) {
     stream.on("error", reject);
   });
 
-  return { path: outPath, matchedSkills };
+  return { path: outPath, matchedSkills, nicheTech };
 }

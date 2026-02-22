@@ -27,6 +27,7 @@ const RESUME_VARIANTS = [
   "/Users/jasonzb/Desktop/apollo/allocation-agent/blob/resume_jasonzb (4).pdf",
   "/Users/jasonzb/Desktop/apollo/allocation-agent/blob/resume_jasonzb_oct10.pdf",
   "/Users/jasonzb/Desktop/apollo/allocation-agent/blob/resume_jasonzb_oct15_m.pdf",
+  "/Users/jasonzb/Desktop/apollo/allocation-agent/blob/resume_jasonzb (7).pdf",
 ];
 
 // Focused job list: Data/Software/ML/Quant roles at US locations
@@ -207,6 +208,7 @@ async function main() {
             matchedSkills = built.matchedSkills;
             console.log(`  JD stack: ${jdStackFlat.join(", ")}`);
             console.log(`  Matched: ${matchedSkills.join(", ")}`);
+            if (stack.niche?.length > 0) console.log(`  Niche tech: ${stack.niche.join(", ")}`);
           }
         }
       } catch (err) {

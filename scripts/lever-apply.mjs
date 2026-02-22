@@ -165,7 +165,7 @@ async function applyToPosting(browser, company, posting) {
     // Parse JD and build tailored resume
     let resumePath = RESUME_PDF_PATH;
     let matchedSkills = [];
-    let jdStack = { languages: [], frameworks: [], databases: [], cloud: [], tools: [] };
+    let jdStack = { languages: [], frameworks: [], databases: [], cloud: [], tools: [], niche: [] };
     try {
       const jdContent = posting.descriptionPlain || posting.description || "";
       if (jdContent) {
@@ -176,6 +176,7 @@ async function applyToPosting(browser, company, posting) {
           resumePath = built.path;
           matchedSkills = built.matchedSkills;
           console.log(`   JD stack: ${flat.join(", ")}`);
+          if (jdStack.niche?.length > 0) console.log(`   Niche tech: ${jdStack.niche.join(", ")}`);
           console.log(`   Matched skills: ${matchedSkills.join(", ")}`);
         }
       }

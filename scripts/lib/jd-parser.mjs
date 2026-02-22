@@ -24,7 +24,7 @@ function stripHtml(html) {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Tech dictionary                                                    */
+/*  Core tech dictionary                                               */
 /* ------------------------------------------------------------------ */
 
 const TECH = {
@@ -154,17 +154,114 @@ const TECH = {
 };
 
 /* ------------------------------------------------------------------ */
+/*  Niche / specialized tech dictionary                                */
+/*  Catches domain-specific technologies not in the core dictionary.   */
+/* ------------------------------------------------------------------ */
+
+const NICHE_TECH = [
+  // Low-latency networking & messaging
+  { pattern: /\baeron\b/i, canonical: "Aeron" },
+  { pattern: /\bebpf\b/i, canonical: "eBPF" },
+  { pattern: /\bdpdk\b/i, canonical: "DPDK" },
+  { pattern: /\bxdp\b/i, canonical: "XDP" },
+  { pattern: /\bbgp\b/i, canonical: "BGP" },
+  { pattern: /\bmpls\b/i, canonical: "MPLS" },
+  { pattern: /\bvxlan\b/i, canonical: "VXLAN" },
+  { pattern: /\bquic\b/i, canonical: "QUIC" },
+  { pattern: /\bzeromq\b|\bzmq\b|\b0mq\b/i, canonical: "ZeroMQ" },
+  { pattern: /\bnats\b(?=\s*(?:,|\.|messaging|stream|jet|server|cluster|io))/i, canonical: "NATS" },
+  { pattern: /\bpulsar\b/i, canonical: "Pulsar" },
+  { pattern: /\bkernel\s*bypass/i, canonical: "Kernel Bypass Networking" },
+  { pattern: /\bio_uring\b/i, canonical: "io_uring" },
+  { pattern: /\brdma\b/i, canonical: "RDMA" },
+  { pattern: /\binfiniband\b/i, canonical: "InfiniBand" },
+  { pattern: /\bspdk\b/i, canonical: "SPDK" },
+
+  // Systems & HPC
+  { pattern: /\bnuma\b/i, canonical: "NUMA" },
+  { pattern: /\bcuda\b/i, canonical: "CUDA" },
+  { pattern: /\bcudnn\b/i, canonical: "cuDNN" },
+  { pattern: /\bopencl\b/i, canonical: "OpenCL" },
+  { pattern: /\bmpi\b(?=\s*(?:,|\.|protocol|message|parallel|cluster|implementation))/i, canonical: "MPI" },
+  { pattern: /\bfpga\b/i, canonical: "FPGA" },
+  { pattern: /\bverilog\b/i, canonical: "Verilog" },
+  { pattern: /\bvhdl\b/i, canonical: "VHDL" },
+  { pattern: /\bwebassembly\b|\bwasm\b/i, canonical: "WebAssembly" },
+
+  // Financial tech protocols
+  { pattern: /\bfix\s*protocol\b|\bfix\s*engine\b|\bfix\s*gateway\b|\bfix\s*(?:4\.[0-4]|5\.0)\b/i, canonical: "FIX Protocol" },
+  { pattern: /\border\s*book\b/i, canonical: "Order Book" },
+  { pattern: /\bmarket\s*data\s*feed/i, canonical: "Market Data Feed" },
+  { pattern: /\blow[- ]latency\b/i, canonical: "Low-Latency Systems" },
+  { pattern: /\btick\s*data\b/i, canonical: "Tick Data" },
+  { pattern: /\bsbe\b(?=\s*(?:,|\.|encoding|protocol|message))/i, canonical: "SBE (Simple Binary Encoding)" },
+  { pattern: /\bitch\b(?=\s*(?:,|\.|protocol|feed|nasdaq))/i, canonical: "ITCH Protocol" },
+
+  // Distributed systems internals
+  { pattern: /\braft\b(?=\s*(?:,|\.|consensus|protocol|algorithm|leader|replication))/i, canonical: "Raft Consensus" },
+  { pattern: /\bpaxos\b/i, canonical: "Paxos" },
+  { pattern: /\bzookeeper\b/i, canonical: "ZooKeeper" },
+  { pattern: /\betcd\b/i, canonical: "etcd" },
+  { pattern: /\bconsul\b/i, canonical: "Consul" },
+
+  // ML inference & serving
+  { pattern: /\bonnx\b/i, canonical: "ONNX" },
+  { pattern: /\btensorrt\b/i, canonical: "TensorRT" },
+  { pattern: /\btriton\s*(?:inference|server)\b/i, canonical: "Triton Inference Server" },
+  { pattern: /\bvllm\b/i, canonical: "vLLM" },
+  { pattern: /\bray\b(?=\s*(?:,|\.|cluster|serve|tune|framework|distributed))/i, canonical: "Ray" },
+  { pattern: /\bdeepspeed\b/i, canonical: "DeepSpeed" },
+  { pattern: /\bmegatron\b/i, canonical: "Megatron" },
+
+  // Observability & service mesh
+  { pattern: /\bopentelemetry\b|\botel\b/i, canonical: "OpenTelemetry" },
+  { pattern: /\bjaeger\b/i, canonical: "Jaeger" },
+  { pattern: /\bzipkin\b/i, canonical: "Zipkin" },
+  { pattern: /\benvoy\b(?=\s*(?:,|\.|proxy|sidecar|mesh|load|filter))/i, canonical: "Envoy Proxy" },
+  { pattern: /\blinkerd\b/i, canonical: "Linkerd" },
+
+  // Security
+  { pattern: /\bmtls\b|\bmutual\s*tls\b/i, canonical: "mTLS" },
+  { pattern: /\bspiffe\b/i, canonical: "SPIFFE" },
+  { pattern: /\bvault\b(?=\s*(?:,|\.|secret|hashicorp|token|seal))/i, canonical: "HashiCorp Vault" },
+  { pattern: /\bopa\b(?=\s*(?:,|\.|policy|rego|open\s*policy))/i, canonical: "OPA (Open Policy Agent)" },
+
+  // Storage systems
+  { pattern: /\bceph\b/i, canonical: "Ceph" },
+  { pattern: /\bminio\b/i, canonical: "MinIO" },
+  { pattern: /\bcolumnar\s*storage\b/i, canonical: "Columnar Storage" },
+  { pattern: /\borc\b(?=\s*(?:,|\.|format|file|storage|columnar))/i, canonical: "ORC" },
+  { pattern: /\barrow\b(?=\s*(?:,|\.|flight|format|apache|columnar|memory))/i, canonical: "Apache Arrow" },
+  { pattern: /\brocksdb\b/i, canonical: "RocksDB" },
+  { pattern: /\bleveldb\b/i, canonical: "LevelDB" },
+  { pattern: /\btikv\b/i, canonical: "TiKV" },
+  { pattern: /\btidb\b/i, canonical: "TiDB" },
+  { pattern: /\bcockroachdb\b|\bcockroach\s*db\b/i, canonical: "CockroachDB" },
+  { pattern: /\bscylladb\b|\bscylla\s*db\b/i, canonical: "ScyllaDB" },
+
+  // Stream processing & CDC
+  { pattern: /\bdebezium\b/i, canonical: "Debezium" },
+  { pattern: /\bcdc\b(?=\s*(?:,|\.|change|capture|pipeline|stream|event))/i, canonical: "CDC (Change Data Capture)" },
+  { pattern: /\bmaterialized\s*view/i, canonical: "Materialized Views" },
+
+  // Workflow & orchestration
+  { pattern: /\btemporal\b(?=\s*(?:,|\.|io|workflow|worker|activity))/i, canonical: "Temporal" },
+  { pattern: /\bcadence\b(?=\s*(?:,|\.|workflow|uber))/i, canonical: "Cadence" },
+  { pattern: /\bstep\s*functions\b/i, canonical: "Step Functions" },
+];
+
+/* ------------------------------------------------------------------ */
 /*  Public API                                                         */
 /* ------------------------------------------------------------------ */
 
 /**
  * Parse a job description (HTML or plain text) and extract tech stack.
  * @param {string} description - Raw JD content (may contain HTML)
- * @returns {{ languages: string[], frameworks: string[], databases: string[], cloud: string[], tools: string[] }}
+ * @returns {{ languages: string[], frameworks: string[], databases: string[], cloud: string[], tools: string[], niche: string[] }}
  */
 export function parseJdTechStack(description) {
   const text = stripHtml(description);
-  const result = { languages: [], frameworks: [], databases: [], cloud: [], tools: [] };
+  const result = { languages: [], frameworks: [], databases: [], cloud: [], tools: [], niche: [] };
 
   for (const [category, entries] of Object.entries(TECH)) {
     const seen = new Set();
@@ -176,12 +273,21 @@ export function parseJdTechStack(description) {
     }
   }
 
+  // Niche / specialized tech
+  const seenNiche = new Set();
+  for (const { pattern, canonical } of NICHE_TECH) {
+    if (!seenNiche.has(canonical) && pattern.test(text)) {
+      seenNiche.add(canonical);
+      result.niche.push(canonical);
+    }
+  }
+
   return result;
 }
 
 /**
  * Flatten a tech stack object into a single array of canonical names.
- * @param {{ languages: string[], frameworks: string[], databases: string[], cloud: string[], tools: string[] }} stack
+ * @param {{ languages: string[], frameworks: string[], databases: string[], cloud: string[], tools: string[], niche?: string[] }} stack
  * @returns {string[]}
  */
 export function flattenStack(stack) {
@@ -191,5 +297,6 @@ export function flattenStack(stack) {
     ...(stack.databases || []),
     ...(stack.cloud || []),
     ...(stack.tools || []),
+    ...(stack.niche || []),
   ];
 }

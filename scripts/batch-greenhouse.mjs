@@ -12,6 +12,10 @@
  */
 import { execSync, spawn } from "child_process";
 import Redis from "ioredis";
+import { parseJdTechStack, flattenStack } from "./lib/jd-parser.mjs";
+import { buildResume } from "./lib/resume-builder.mjs";
+import { resumeText, skills } from "./lib/candidate-data.mjs";
+import { recordJobRun } from "./lib/job-runs.mjs";
 
 const REDIS_URL = "redis://default:" + (process.env.REDIS_PASSWORD || "") + "@redis-17054.c99.us-east-1-4.ec2.cloud.redislabs.com:17054";
 
@@ -187,6 +191,28 @@ async function main() {
       console.log(`\n  APPLYING: ${job.id} - ${job.title}`);
       console.log(`  RESUME: ${variantName}`);
 
+      // Fetch JD and build tailored resume
+      let resumeForJob = variant; // fallback to current round-robin variant
+      let matchedSkills = [];
+      let jdStackFlat = [];
+      try {
+        const jdRes = await fetch(`https://boards-api.greenhouse.io/v1/boards/${company}/jobs/${job.id}`);
+        if (jdRes.ok) {
+          const jdData = await jdRes.json();
+          const stack = parseJdTechStack(jdData.content || "");
+          jdStackFlat = flattenStack(stack);
+          if (jdStackFlat.length > 0) {
+            const built = await buildResume(resumeText, skills, stack);
+            resumeForJob = built.path;
+            matchedSkills = built.matchedSkills;
+            console.log(`  JD stack: ${jdStackFlat.join(", ")}`);
+            console.log(`  Matched: ${matchedSkills.join(", ")}`);
+          }
+        }
+      } catch (err) {
+        console.log(`  JD fetch/parse failed: ${err.message}, using variant resume`);
+      }
+
       // Mark as in-progress in Redis
       await redis.set(redisKey, JSON.stringify({ status: "in_progress", title: job.title, resumeVariant: variantName, startedAt: new Date().toISOString() }), "EX", 86400 * 90);
 
@@ -196,7 +222,7 @@ async function main() {
           `node scripts/test-apply.mjs ${company} ${job.id}`,
           {
             cwd: "/Users/jasonzb/conductor/workspaces/allocation-notification-service-v1/asuncion",
-            env: { ...process.env, PATH: process.env.PATH, RESUME_PATH: variant },
+            env: { ...process.env, PATH: process.env.PATH, RESUME_PATH: resumeForJob },
             timeout: 300_000, // 5 min per job
             encoding: "utf-8",
             maxBuffer: 10 * 1024 * 1024,
@@ -220,6 +246,18 @@ async function main() {
         if (isPASS) totalApplied++;
         else totalFailed++;
         results.push({ company, id: job.id, title: job.title, status });
+
+        await recordJobRun({
+          platform: "greenhouse",
+          company,
+          jobId: String(job.id),
+          jobTitle: job.title,
+          resumeVariant: resumeForJob.includes("resume_tmp") ? "resume_tmp.pdf" : variant.split("/").pop(),
+          resumeSkillsMatched: matchedSkills,
+          jdStackDetected: jdStackFlat,
+          status: isPASS ? "PASS" : "FAIL",
+          message: output?.substring(0, 200) || "",
+        });
 
       } catch (err) {
         const errOutput = (err.stdout || "") + "\n" + (err.stderr || "");

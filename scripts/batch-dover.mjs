@@ -19,6 +19,8 @@ import puppeteer from "puppeteer-core";
 import { readFileSync, existsSync } from "fs";
 import { resolve } from "path";
 import Redis from "ioredis";
+import { isRelevantJob as _isRelevantJob } from "./lib/job-filter.mjs";
+import { recordJobRun } from "./lib/job-runs.mjs";
 
 // ── Config ──
 
@@ -62,60 +64,7 @@ async function disconnectRedis() {
 // ── Filter logic ──
 
 function isRelevantJob(job) {
-  const t = job.title.toLowerCase();
-
-  // Include: software, data, ML, platform, infra, backend, fullstack, devops, SRE, quant, etc.
-  const includeKeywords = [
-    "software", "engineer", "developer", "data", "machine learning", "ml ",
-    "backend", "back-end", "full stack", "full-stack", "fullstack",
-    "infrastructure", "platform", "devops", "sre", "reliability",
-    "quantitative", "quant", "analyst", "scientist", "python", "java",
-    "cloud", "systems", "founding",
-    "frontend", "front-end", "mobile", "ios", "android",
-    "architect", "tech lead", "technical lead", "head of engineering",
-    "ai ", "robotics", "automation", "security", "cyber",
-    "product engineer", "implementation engineer",
-  ];
-
-  // Exclude: intern, recruiter, HR, sales, marketing, design, product manager, clinical, nurse, medical
-  const excludeKeywords = [
-    "intern", "recruiter", "recruiting", "human resources", "sales",
-    "marketing", "design", "product manager", "account manager",
-    "account executive", "partnership manager",
-    "clinical", "nurse", "medical", "pharmacist", "customer success",
-    "customer support", "executive assistant", "office manager",
-    "content", "copywriter", "pr ", "public relations",
-    "legal", "paralegal", "attorney", "counsel",
-    "accountant", "bookkeeper", "controller", "compliance",
-    "solutions consultant", "gtm",
-  ];
-
-  if (excludeKeywords.some((k) => t.includes(k))) return false;
-  if (!includeKeywords.some((k) => t.includes(k))) return false;
-
-  // Exclude non-US locations (check both title and locations field)
-  const nonUS = [
-    "international", "brazil", "europe", "india", "nigeria",
-    "australia", "london", "uk", "berlin", "germany", "toronto",
-    "canada", "singapore", "hong kong", "japan", "korea",
-    "south africa", "africa", "remote (international",
-    "latin america", "latam", "mexico", "philippines",
-    "pakistan", "bangladesh", "vietnam",
-    "tel aviv", "israel", "dubai", "lithuania", "spain",
-    "romania", "portugal", "poland", "armenia",
-    "taiwan", "china", "france", "paris", "nantong", "xiamen",
-    "guangzhou", "hangzhou", "taipei", "shanghai", "beijing",
-    "netherlands", "amsterdam", "ireland", "dublin",
-    "sweden", "stockholm", "denmark", "norway", "finland",
-    "switzerland", "zurich", "austria", "vienna",
-    "czech", "prague", "hungary", "budapest",
-    "argentina", "buenos aires", "colombia", "bogota",
-    "chile", "santiago", "peru", "lima",
-  ];
-  const loc = (job.locations || "").toLowerCase();
-  if (nonUS.some((k) => t.includes(k) || loc.includes(k))) return false;
-
-  return true;
+  return _isRelevantJob(job.title, job.locations);
 }
 
 // ── Apply to a single job ──
@@ -439,6 +388,18 @@ async function applyToJob(page, job) {
       );
       await redis.expire(key, 60 * 60 * 24 * 90);
     }
+
+    await recordJobRun({
+      platform: "dover",
+      company: job.companySlug || job.company,
+      jobId: job.jobId,
+      jobTitle: job.title,
+      resumeVariant: "static",
+      resumeSkillsMatched: [],
+      jdStackDetected: [],
+      status: status || "PASS",
+      message: message || "",
+    });
 
     return status === "PASS" ? "pass" : "fail";
   } catch (err) {

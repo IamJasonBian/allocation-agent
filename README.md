@@ -60,3 +60,15 @@ node scripts/check-status.mjs
 - **Gmail API** — Retrieves Greenhouse security codes
 - **Redis Cloud** — Application deduplication (90-day TTL)
 - **3 ATS Platforms**: Greenhouse (reCAPTCHA), Lever (hCaptcha), Dover (Cloudflare Turnstile)
+
+## Operations & Security
+
+### Service Access Audit
+```bash
+npm run audit-access              # Check all services
+npm run audit-access -- --verbose  # Detailed output
+```
+
+### Documentation
+- **[Quick Reference](./docs/QUICK_REFERENCE.md)** - TL;DR for permissions, service access, and operational limits
+- **[Full Security Audit](./docs/BROWSER_PERMISSIONS_AND_ACCESS.md)** - Comprehensive browser permissions, service access, and security analysis

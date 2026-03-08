@@ -18,6 +18,8 @@ npm install
 ### Environment Variables
 
 Create a `.env` file or export:
+* route-agent
+* jason.bian64@gmail.com
 
 | Variable | Description |
 |----------|-------------|

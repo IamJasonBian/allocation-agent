@@ -1,0 +1,220 @@
+{
+  "backup_heuristic": {
+    "description": "Minimal word count answers for unexpected application questions",
+    "rules": [
+      "Keep answers under 20 words when possible",
+      "Use concrete facts over adjectives",
+      "Reference Amazon experience briefly",
+      "Default to 'open to discussion' for sensitive topics"
+    ]
+  },
+
+  "question_patterns": {
+    "salary_expectations": {
+      "pattern": ["salary", "compensation", "pay range", "expected pay"],
+      "answer": "Open to market rate for the role and location"
+    },
+
+    "start_date": {
+      "pattern": ["start date", "available to start", "earliest start"],
+      "answer": "2 weeks notice"
+    },
+
+    "relocation": {
+      "pattern": ["relocate", "willing to move", "location preference"],
+      "answer": "Open to relocation for the right opportunity"
+    },
+
+    "work_authorization": {
+      "pattern": ["authorized to work", "work permit", "visa"],
+      "answer": "Yes, authorized to work in US"
+    },
+
+    "sponsorship": {
+      "pattern": ["sponsorship", "require visa", "h1b"],
+      "answer": "No sponsorship needed"
+    },
+
+    "notice_period": {
+      "pattern": ["notice period", "how much notice"],
+      "answer": "2 weeks"
+    },
+
+    "current_salary": {
+      "pattern": ["current salary", "current compensation"],
+      "answer": "Prefer to discuss total compensation package"
+    },
+
+    "why_leaving": {
+      "pattern": ["why leaving", "reason for leaving", "why change"],
+      "answer": "Seeking ML infrastructure role with greater technical impact"
+    },
+
+    "team_size": {
+      "pattern": ["team size", "how many people"],
+      "answer": "5-15 engineers, cross-functional collaboration"
+    },
+
+    "management_experience": {
+      "pattern": ["manage", "lead people", "reports"],
+      "answer": "Technical leadership, mentoring juniors, no direct reports"
+    },
+
+    "remote_preference": {
+      "pattern": ["remote", "hybrid", "in-office"],
+      "answer": "Flexible, prefer hybrid for collaboration"
+    },
+
+    "greatest_strength": {
+      "pattern": ["greatest strength", "what are you good at"],
+      "answer": "Building production ML systems that scale"
+    },
+
+    "greatest_weakness": {
+      "pattern": ["greatest weakness", "what to improve"],
+      "answer": "Frontend development, actively learning React/TypeScript"
+    },
+
+    "long_term_goals": {
+      "pattern": ["long term", "5 years", "career goals"],
+      "answer": "Lead ML infrastructure teams, architect large-scale AI platforms"
+    },
+
+    "why_this_company": {
+      "pattern": ["why us", "why this company", "why interested"],
+      "answer": "ML infrastructure role matching my Amazon experience"
+    },
+
+    "diversity_statement": {
+      "pattern": ["diversity", "inclusion", "equity"],
+      "answer": "Value diverse perspectives, inclusive collaboration drives better engineering"
+    },
+
+    "veteran_status": {
+      "pattern": ["veteran", "military service"],
+      "answer": "No"
+    },
+
+    "disability": {
+      "pattern": ["disability", "accommodation"],
+      "answer": "No accommodations needed"
+    },
+
+    "criminal_background": {
+      "pattern": ["criminal", "background check", "conviction"],
+      "answer": "No"
+    },
+
+    "referral": {
+      "pattern": ["how did you hear", "referral", "who referred"],
+      "answer": "LinkedIn"
+    },
+
+    "other_interviews": {
+      "pattern": ["other interviews", "interviewing elsewhere"],
+      "answer": "Exploring ML infrastructure roles at several companies"
+    },
+
+    "availability": {
+      "pattern": ["availability for interview", "when can you interview"],
+      "answer": "Flexible, available most weekdays after 5pm ET"
+    },
+
+    "technical_challenge": {
+      "pattern": ["biggest technical challenge", "hard problem"],
+      "answer": "Optimizing Spark pipelines from 48h to 5h runtime"
+    },
+
+    "failure_example": {
+      "pattern": ["failure", "mistake", "didn't go well"],
+      "answer": "Initial RL model underperformed, required 3 iterations to production"
+    },
+
+    "conflict_resolution": {
+      "pattern": ["conflict", "disagreement", "difficult colleague"],
+      "answer": "Data-driven discussions, focus on business metrics over opinions"
+    },
+
+    "github_portfolio": {
+      "pattern": ["github", "portfolio", "code samples"],
+      "answer": "https://github.com/IamJasonBian"
+    },
+
+    "linkedin_profile": {
+      "pattern": ["linkedin"],
+      "answer": "https://www.linkedin.com/in/jason-bian-7b9027a5/"
+    },
+
+    "website": {
+      "pattern": ["website", "personal site"],
+      "answer": "https://github.com/IamJasonBian"
+    },
+
+    "preferred_pronouns": {
+      "pattern": ["pronouns", "how do you identify"],
+      "answer": "He/Him"
+    },
+
+    "education_gpa": {
+      "pattern": ["gpa", "grade point"],
+      "answer": "N/A"
+    },
+
+    "certifications": {
+      "pattern": ["certification", "certificates"],
+      "answer": "None currently"
+    },
+
+    "publications": {
+      "pattern": ["publication", "papers", "research"],
+      "answer": "None"
+    },
+
+    "side_projects": {
+      "pattern": ["side project", "personal project"],
+      "answer": "Allocation agent for job applications, built with Claude Code"
+    },
+
+    "open_source": {
+      "pattern": ["open source", "contribute to oss"],
+      "answer": "Some contributions, primarily internal tooling at Amazon"
+    },
+
+    "stack_overflow": {
+      "pattern": ["stack overflow", "stackoverflow"],
+      "answer": "Occasional contributor"
+    },
+
+    "tech_blogs": {
+      "pattern": ["blog", "write about tech"],
+      "answer": "No active blog"
+    },
+
+    "conferences": {
+      "pattern": ["conference", "speaking", "talks"],
+      "answer": "Attendee, no speaking engagements"
+    },
+
+    "default_fallback": {
+      "pattern": [],
+      "answer": "Please clarify the question for a detailed response"
+    }
+  },
+
+  "company_specific_overrides": {
+    "anthropic": {
+      "why_this_company": "AI safety mission, Claude's constitutional AI approach",
+      "long_term_goals": "Support frontier AI research with reliable data infrastructure"
+    },
+
+    "galaxy": {
+      "why_this_company": "Web3 + AI intersection, enterprise ML platform engineering",
+      "long_term_goals": "Architect scalable AI infrastructure for finance"
+    },
+
+    "finch": {
+      "why_this_company": "AI-native vertical platform, Series A impact, modern stack",
+      "long_term_goals": "Build full-stack AI workflow automation for legal tech"
+    }
+  }
+}

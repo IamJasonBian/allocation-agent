@@ -20,6 +20,11 @@ import puppeteer from "puppeteer-core";
 import { readFileSync, existsSync } from "fs";
 import { resolve } from "path";
 import Redis from "ioredis";
+import { isRelevantJob as _isRelevantJob } from "./lib/job-filter.mjs";
+import { parseJdTechStack, flattenStack } from "./lib/jd-parser.mjs";
+import { buildResume } from "./lib/resume-builder.mjs";
+import { resumeText, skills } from "./lib/candidate-data.mjs";
+import { recordJobRun } from "./lib/job-runs.mjs";
 
 // ── Config ──
 
@@ -131,14 +136,7 @@ async function fetchLeverJobs(company) {
 }
 
 function isRelevantJob(job) {
-  const t = (job.text || "").toLowerCase();
-  const team = (job.categories?.team || "").toLowerCase();
-  // Include data/eng/quant/ML/infra roles
-  const keywords = ["data", "engineer", "software", "quant", "developer", "analyst", "machine learning", "infrastructure", "reliability", "sre"];
-  // Exclude recruiting, HR, finance ops, compliance, admin
-  const excludeKeywords = ["recruiter", "recruiting", "human resources", "executive assistant", "compliance", "treasury", "fp&a"];
-  if (excludeKeywords.some(k => t.includes(k) || team.includes(k))) return false;
-  return keywords.some(k => t.includes(k) || team.includes(k));
+  return _isRelevantJob(job.text, job.categories?.location, job.categories?.team);
 }
 
 // ── Apply to a single Lever posting ──
@@ -163,6 +161,28 @@ async function applyToPosting(browser, company, posting) {
       return { status: "skipped", reason: "already_applied" };
     }
   }
+
+    // Parse JD and build tailored resume
+    let resumePath = RESUME_PDF_PATH;
+    let matchedSkills = [];
+    let jdStack = { languages: [], frameworks: [], databases: [], cloud: [], tools: [], niche: [] };
+    try {
+      const jdContent = posting.descriptionPlain || posting.description || "";
+      if (jdContent) {
+        jdStack = parseJdTechStack(jdContent);
+        const flat = flattenStack(jdStack);
+        if (flat.length > 0) {
+          const built = await buildResume(resumeText, skills, jdStack);
+          resumePath = built.path;
+          matchedSkills = built.matchedSkills;
+          console.log(`   JD stack: ${flat.join(", ")}`);
+          if (jdStack.niche?.length > 0) console.log(`   Niche tech: ${jdStack.niche.join(", ")}`);
+          console.log(`   Matched skills: ${matchedSkills.join(", ")}`);
+        }
+      }
+    } catch (err) {
+      console.log(`   JD parse/resume build failed: ${err.message}, using static resume`);
+    }
 
   const page = await browser.newPage();
   try {
@@ -195,10 +215,10 @@ async function applyToPosting(browser, company, posting) {
     //    which auto-fills name/email/phone/location from parsed resume.
     //    We fill basic fields AFTER to override any incorrect parsed values.
     let resumeUploaded = false;
-    if (!process.env.SKIP_RESUME && existsSync(RESUME_PDF_PATH)) {
+    if (!process.env.SKIP_RESUME && existsSync(resumePath)) {
       const fileInput = await page.$("#resume-upload-input");
       if (fileInput) {
-        await fileInput.uploadFile(RESUME_PDF_PATH);
+        await fileInput.uploadFile(resumePath);
         for (let i = 0; i < 20; i++) {
           await new Promise(r => setTimeout(r, 1000));
           const storageId = await page.evaluate(() => {
@@ -523,6 +543,18 @@ async function applyToPosting(browser, company, posting) {
       team,
       captchaSolved,
       message: result.message,
+    });
+
+    await recordJobRun({
+      platform: "lever",
+      company,
+      jobId: posting.id,
+      jobTitle: posting.text,
+      resumeVariant: resumePath.includes("resume_tmp") ? "resume_tmp.pdf" : "static",
+      resumeSkillsMatched: matchedSkills,
+      jdStackDetected: flattenStack(jdStack),
+      status: result.status === "success" ? "PASS" : "FAIL",
+      message: result.message || "",
     });
 
     return { status, ...result };

@@ -1,0 +1,80 @@
+{
+  "jobs": [
+    {
+      "company": "Galaxy Digital",
+      "title": "Infrastructure Engineer (AI Platforms)",
+      "url": "https://job-boards.greenhouse.io/galaxydigitalservices/jobs/5812855004",
+      "platform": "greenhouse",
+      "location": "New York, NY",
+      "salary": "$220,000 - $250,000",
+      "priority": 1,
+      "complexity_score": 10,
+      "tags": ["AI", "ML", "Kubernetes", "Infrastructure", "MLOps"],
+      "status": "submitted"
+    },
+    {
+      "company": "Anthropic",
+      "title": "Data Engineer II",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4956672008",
+      "platform": "greenhouse",
+      "location": "San Francisco, CA",
+      "priority": 1,
+      "complexity_score": 12,
+      "tags": ["Data Engineering", "ML", "AI Safety", "Python"],
+      "status": "ready"
+    },
+    {
+      "company": "Finch Legal",
+      "title": "ML/Backend Engineer",
+      "url": "https://www.finchlegal.com/careers?ashby_jid=102f64ba-a1f2-4c0a-a575-a611798ec59f",
+      "platform": "ashby",
+      "location": "Remote",
+      "priority": 1,
+      "complexity_score": 15,
+      "tags": ["ML", "Backend", "Legal Tech", "Vertical AI"],
+      "status": "ready"
+    },
+    {
+      "company": "Mistral AI",
+      "title": "ML Engineer",
+      "url": "https://jobs.lever.co/mistral/fb15ec7f-d9e9-4246-9d36-486d46c289e4",
+      "platform": "lever",
+      "location": "Paris, France / Remote",
+      "priority": 2,
+      "complexity_score": 14,
+      "tags": ["ML", "LLM", "AI Research"],
+      "status": "ready"
+    },
+    {
+      "company": "Trunk Tools",
+      "title": "Backend Engineer",
+      "url": "https://trunktools.com/careers/?ashby_jid=83375669-1d4a-479d-83e3-a754c19397e2",
+      "platform": "ashby",
+      "location": "Remote",
+      "priority": 2,
+      "complexity_score": 13,
+      "tags": ["Backend", "Construction Tech"],
+      "status": "ready"
+    },
+    {
+      "company": "McKinsey & Company",
+      "title": "Data Engineer",
+      "url": "https://jobs.mckinsey.com/careers/LocationAndProfile?t=standard&folderId=102543",
+      "platform": "mckinsey",
+      "location": "Various",
+      "priority": 3,
+      "complexity_score": 32,
+      "tags": ["Consulting", "Data Engineering"],
+      "status": "filtered_out",
+      "filter_reason": "Video requirement + multi-step form"
+    }
+  ],
+  "metadata": {
+    "created": "2026-03-12T18:00:00.000Z",
+    "total_jobs": 6,
+    "ready_to_apply": 4,
+    "already_submitted": 1,
+    "filtered_out": 1,
+    "notes": "Seeded from Chrome tabs and application tracking. Complexity scores calculated by job-complexity-filter.mjs"
+  }
+}

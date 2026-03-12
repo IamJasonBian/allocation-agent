@@ -19,7 +19,55 @@ When processing job descriptions, we need to augment the extracted tech stack wi
 
 ### Tier 1: Structured APIs (Best)
 
-#### 1. **GitHub API** ⭐⭐⭐⭐⭐
+#### 1. **Serper.dev (Google Search API)** ⭐⭐⭐⭐⭐
+
+**Endpoint**: `https://google.serper.dev/search`
+
+**What You Get**:
+- Google search results with snippets
+- Knowledge graph data
+- Engineering blog posts
+- News articles about tech migrations
+- "About Us" pages mentioning stack
+
+**Example: Finch Legal**
+```bash
+curl -X POST 'https://google.serper.dev/search' \
+  -H 'X-API-KEY: your-api-key' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "q": "Finch Legal engineering blog tech stack",
+    "num": 10
+  }'
+```
+
+**Search Queries Per Company**:
+1. `"{company}" engineering blog tech stack`
+2. `"{company}" "built with" OR "powered by" technology`
+3. `"{company}" architecture AWS OR GCP OR Azure`
+4. `"{company}" "we use" Python OR Java OR JavaScript`
+
+**Pros**:
+- ✅ Real Google search results (most comprehensive)
+- ✅ Finds engineering blogs, about pages, news
+- ✅ Knowledge graph for verified company info
+- ✅ Fast (< 1 second per query)
+- ✅ No scraping/captcha issues
+
+**Cons**:
+- ❌ Paid ($50 for 5000 searches = $0.01/search, ~$0.04/company)
+- ❌ Requires parsing unstructured text
+- ❌ Quality depends on company's public presence
+
+**Cost Example**:
+- 200 companies × 4 queries = 800 searches = $8/month
+- 1000 companies × 4 queries = 4000 searches = $40/month
+
+**Sign Up**: https://serper.dev/
+
+---
+
+#### 2. **GitHub API** ⭐⭐⭐⭐⭐
 
 **Endpoint**: `https://api.github.com/orgs/{org}/repos`
 

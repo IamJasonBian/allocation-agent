@@ -1,0 +1,17 @@
+{
+  "name": "allocation-agent-2.0",
+  "version": "2.0.0",
+  "description": "Allocation agent v2 with Firecrawl scraping and Chrome cookie persistence",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "scrape": "node scripts/scrape-with-cookies.mjs",
+    "firecrawl": "node scripts/firecrawl-scrape.mjs"
+  },
+  "dependencies": {
+    "@mendable/firecrawl-js": "^1.15.0",
+    "puppeteer-core": "^24.37.3"
+  }
+}

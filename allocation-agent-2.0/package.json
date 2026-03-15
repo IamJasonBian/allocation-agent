@@ -8,10 +8,12 @@
   },
   "scripts": {
     "scrape": "node scripts/scrape-with-cookies.mjs",
-    "firecrawl": "node scripts/firecrawl-scrape.mjs"
+    "firecrawl": "node scripts/firecrawl-scrape.mjs",
+    "batch": "node scripts/batch-scrape-upload.mjs"
   },
   "dependencies": {
     "@mendable/firecrawl-js": "^1.15.0",
+    "@netlify/blobs": "^10.7.2",
     "dotenv": "^16.4.0",
     "puppeteer-core": "^24.37.3"
   }

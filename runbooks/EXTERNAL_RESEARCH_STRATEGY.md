@@ -719,7 +719,7 @@ def lookup_by_perplexity(self, company_name: str) -> CompanyStackInfo:
 ## Example: Complete Finch Legal Research
 
 ```python
-from company_stack_lookup import CompanyStackDatabase, PublicStackLookup
+from runbooks.company_stack_lookup import CompanyStackDatabase, PublicStackLookup
 
 db = CompanyStackDatabase()
 lookup = PublicStackLookup(db)

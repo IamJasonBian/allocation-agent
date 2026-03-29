@@ -11,7 +11,7 @@ Cost: $50 for 5000 searches = $0.01 per search
 Get API key: https://serper.dev/
 """
 
-from company_stack_lookup import PublicStackLookup, CompanyStackDatabase
+from runbooks.company_stack_lookup import PublicStackLookup, CompanyStackDatabase
 import os
 import sys
 

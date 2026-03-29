@@ -157,7 +157,7 @@ Jane Street MLE:
 ### Process a Single Job
 
 ```python
-from jd_star_integration import JDStarSystem
+from runbooks.jd_star_integration import JDStarSystem
 
 system = JDStarSystem()
 system.set_candidate_data(resume_text, skills)

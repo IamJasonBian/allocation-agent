@@ -60,7 +60,7 @@ python3 jd_star_integration.py  # Run example
 ### Basic Usage
 
 ```python
-from jd_star_integration import JDStarSystem
+from runbooks.jd_star_integration import JDStarSystem
 
 # Initialize
 system = JDStarSystem()
@@ -97,7 +97,7 @@ print(result.why_work_here)
 ```python
 # In your batch-greenhouse.mjs or batch-dover.mjs:
 
-from jd_star_integration import JDStarSystem
+from runbooks.jd_star_integration import JDStarSystem
 import json
 
 system = JDStarSystem()
@@ -121,7 +121,7 @@ for job in greenhouse_jobs:
 ### Search Indexed Webpages
 
 ```python
-from webpage_indexer import WebpageStorage
+from runbooks.webpage_indexer import WebpageStorage
 
 indexer = WebpageStorage()
 
@@ -138,7 +138,7 @@ job_postings = indexer.get_all_pages(page_type="job_posting")
 ### Query Entity Store
 
 ```python
-from jd_star_integration import EntityStore
+from runbooks.jd_star_integration import EntityStore
 
 store = EntityStore()
 

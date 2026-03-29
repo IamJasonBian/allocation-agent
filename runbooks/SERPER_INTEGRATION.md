@@ -51,7 +51,7 @@ pip3 install requests
 ### Basic Usage
 
 ```python
-from company_stack_lookup import PublicStackLookup, CompanyStackDatabase
+from runbooks.company_stack_lookup import PublicStackLookup, CompanyStackDatabase
 
 # Initialize
 db = CompanyStackDatabase()

@@ -27,7 +27,7 @@ python3 example_integration.py
 ## Basic Usage (Copy-Paste)
 
 ```python
-from jd_star_integration import JDStarSystem
+from runbooks.jd_star_integration import JDStarSystem
 
 # 1. Initialize
 system = JDStarSystem()

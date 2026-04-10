@@ -1,0 +1,2999 @@
+[
+  {
+    "company": "Nuro",
+    "boardToken": "nuro",
+    "id": "5366973",
+    "title": "Senior/Staff Software Engineer, ML Data Infrastructure",
+    "location": "Mountain View, California (HQ)",
+    "url": "https://nuro.ai/careersitem?gh_jid=5366973",
+    "score": 175
+  },
+  {
+    "company": "Jump Trading",
+    "boardToken": "jumptrading",
+    "id": "6032511",
+    "title": "Research Scientist/Research Engineer | Deep Learning",
+    "location": "Chicago, New York, London",
+    "url": "https://www.jumptrading.com/hr/job?gh_jid=6032511",
+    "score": 120
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "5074815008",
+    "title": "Research Engineer/Research Scientist, Audio",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5074815008",
+    "score": 120
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "4924308008",
+    "title": "Research Engineer / Research Scientist, Biology & Life Sciences",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/4924308008",
+    "score": 120
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "4951814008",
+    "title": " Research Engineer / Research Scientist, Tokens",
+    "location": "New York City, NY; New York City, NY | Seattle, WA; San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/4951814008",
+    "score": 120
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "5074217008",
+    "title": "Research Engineer / Research Scientist, Vision",
+    "location": "New York City, NY; San Francisco, CA; Seattle, WA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5074217008",
+    "score": 120
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4528009005",
+    "title": "Machine Learning Research Scientist / Research Engineer, Post-Training",
+    "location": "San Francisco, CA; Seattle, WA; New York, NY",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4528009005",
+    "score": 120
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4631677005",
+    "title": "Senior Machine Learning Engineer, Computer Vision - Robotics",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4631677005",
+    "score": 105
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4631848005",
+    "title": "Senior Machine Learning Engineer - Model Evaluations, Public Sector",
+    "location": "San Francisco, CA; St. Louis, MO; New York, NY; Washington, DC",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4631848005",
+    "score": 105
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4281519005",
+    "title": "Senior Machine Learning Engineer, Public Sector",
+    "location": "San Francisco, CA; New York, NY; Washington, DC",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4281519005",
+    "score": 105
+  },
+  {
+    "company": "Databricks",
+    "boardToken": "databricks",
+    "id": "6954585002",
+    "title": "Senior Machine Learning Engineer - GenAI Platform ",
+    "location": "San Francisco, California",
+    "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6954585002",
+    "score": 105
+  },
+  {
+    "company": "Airbnb",
+    "boardToken": "airbnb",
+    "id": "7560504",
+    "title": "Senior Machine Learning Engineer, Community Support Engineering ",
+    "location": "Remote- USA",
+    "url": "https://careers.airbnb.com/positions/7560504?gh_jid=7560504",
+    "score": 105
+  },
+  {
+    "company": "Airbnb",
+    "boardToken": "airbnb",
+    "id": "7623458",
+    "title": "Senior Machine Learning Engineer, Listing and Host Tools Data and AI",
+    "location": "Remote-USA",
+    "url": "https://careers.airbnb.com/positions/7623458?gh_jid=7623458",
+    "score": 105
+  },
+  {
+    "company": "Robinhood",
+    "boardToken": "robinhood",
+    "id": "7121213",
+    "title": "Senior Machine Learning Engineer, Agentic",
+    "location": "Bellevue, WA; Menlo Park, CA",
+    "url": "https://boards.greenhouse.io/robinhood/jobs/7121213?t=gh_src=&gh_jid=7121213",
+    "score": 105
+  },
+  {
+    "company": "Instacart",
+    "boardToken": "instacart",
+    "id": "7561091",
+    "title": "Senior Machine Learning Engineer, Caper",
+    "location": "United States - Remote",
+    "url": "https://instacart.careers/job/?gh_jid=7561091",
+    "score": 105
+  },
+  {
+    "company": "Instacart",
+    "boardToken": "instacart",
+    "id": "7561937",
+    "title": "Senior Machine Learning Engineer, Caper (Fraud)",
+    "location": "US-Remote",
+    "url": "https://instacart.careers/job/?gh_jid=7561937",
+    "score": 105
+  },
+  {
+    "company": "Instacart",
+    "boardToken": "instacart",
+    "id": "7358005",
+    "title": "Senior Machine Learning Engineer II - AI Special Projects",
+    "location": "Canada - Remote (ON, AB, BC, or NS Only)",
+    "url": "https://instacart.careers/job/?gh_jid=7358005",
+    "score": 105
+  },
+  {
+    "company": "Instacart",
+    "boardToken": "instacart",
+    "id": "7561665",
+    "title": "Senior Machine Learning Engineer II,  AI Special Projects",
+    "location": "United States - Remote",
+    "url": "https://instacart.careers/job/?gh_jid=7561665",
+    "score": 105
+  },
+  {
+    "company": "Instacart",
+    "boardToken": "instacart",
+    "id": "7647987",
+    "title": "Senior Machine Learning Engineer II, Economist ",
+    "location": "United States - Remote",
+    "url": "https://instacart.careers/job/?gh_jid=7647987",
+    "score": 105
+  },
+  {
+    "company": "Instacart",
+    "boardToken": "instacart",
+    "id": "7566001",
+    "title": "Senior Machine Learning Engineer II, Growth Modeling",
+    "location": "USA - Remote",
+    "url": "https://instacart.careers/job/?gh_jid=7566001",
+    "score": 105
+  },
+  {
+    "company": "Instacart",
+    "boardToken": "instacart",
+    "id": "7565508",
+    "title": "Senior Machine Learning Engineer I & II, Search & Recommendations Ranking",
+    "location": "US - Remote",
+    "url": "https://instacart.careers/job/?gh_jid=7565508",
+    "score": 105
+  },
+  {
+    "company": "Instacart",
+    "boardToken": "instacart",
+    "id": "6716788",
+    "title": "Senior Machine Learning Engineer II, Search & Personalization",
+    "location": "Canada - Remote (AB, BC, ON, NS ONLY)",
+    "url": "https://instacart.careers/job/?gh_jid=6716788",
+    "score": 105
+  },
+  {
+    "company": "Coinbase",
+    "boardToken": "coinbase",
+    "id": "7711075",
+    "title": "Senior Machine Learning Engineer",
+    "location": "Remote - India",
+    "url": "https://www.coinbase.com/careers/positions/7711075?gh_jid=7711075",
+    "score": 105
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7249525",
+    "title": "Senior Machine Learning Engineer, Computer Vision/VLM",
+    "location": "Mountain View, CA, USA; San Francisco, CA, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7249525",
+    "score": 105
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7367714",
+    "title": "Senior Machine Learning Engineer, LLM/VLM Visual Reasoning",
+    "location": "Mountain View, CA, US; San Francisco, CA, US",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7367714",
+    "score": 105
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7488596",
+    "title": "Senior Machine Learning Engineer, Perception LLM/VLM",
+    "location": "Mountain View, CA USA;  San Francisco, CA USA;",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7488596",
+    "score": 105
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7463326",
+    "title": "Senior Machine Learning Engineer, Planner Reasoning",
+    "location": "Mountain View, California, United States; San Francisco, California, United States",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7463326",
+    "score": 105
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7454241",
+    "title": "Senior Machine Learning Engineer, Sensor Validation",
+    "location": "Mountain View, CA, USA; San Francisco, CA, USA; Kirkland, WA, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7454241",
+    "score": 105
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7430187",
+    "title": "Senior Machine Learning Engineer, Simulation",
+    "location": "Mountain View, CA, USA; New York, NY, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7430187",
+    "score": 105
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7644924",
+    "title": "Senior Machine Learning Engineer – VLM/LLM Evaluation",
+    "location": "Mountain View, CA, USA; New York, NY, USA, Seattle, WA, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7644924",
+    "score": 105
+  },
+  {
+    "company": "Point72",
+    "boardToken": "point72",
+    "id": "8170176002",
+    "title": "Machine Learning Engineer",
+    "location": "New York",
+    "url": "https://boards.greenhouse.io/point72/jobs/8170176002?gh_jid=8170176002",
+    "score": 100
+  },
+  {
+    "company": "Point72",
+    "boardToken": "point72",
+    "id": "8392982002",
+    "title": "Machine Learning Engineer, Genai Technology",
+    "location": "New York, NY",
+    "url": "https://boards.greenhouse.io/point72/jobs/8392982002?gh_jid=8392982002",
+    "score": 100
+  },
+  {
+    "company": "Point72",
+    "boardToken": "point72",
+    "id": "8342478002",
+    "title": "Machine Learning Engineer, GenAI Technology",
+    "location": "United States",
+    "url": "https://boards.greenhouse.io/point72/jobs/8342478002?gh_jid=8342478002",
+    "score": 100
+  },
+  {
+    "company": "IMC Trading",
+    "boardToken": "imc",
+    "id": "4713602101",
+    "title": "Hardware Machine Learning Engineer",
+    "location": "Chicago, United States; New York, United States",
+    "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4713602101",
+    "score": 100
+  },
+  {
+    "company": "IMC Trading",
+    "boardToken": "imc",
+    "id": "4570309101",
+    "title": "Machine Learning Engineer",
+    "location": "Chicago, United States; Hong Kong, Hong Kong; Sydney,  Australia",
+    "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4570309101",
+    "score": 100
+  },
+  {
+    "company": "Jane Street",
+    "boardToken": "janestreet",
+    "id": "8048874002",
+    "title": "Machine Learning Engineer",
+    "location": "New York, New York, United States",
+    "url": "https://job-boards.greenhouse.io/janestreet/jobs/8048874002",
+    "score": 100
+  },
+  {
+    "company": "Jane Street",
+    "boardToken": "janestreet",
+    "id": "6485460002",
+    "title": "Machine Learning Engineer",
+    "location": "New York, New York, United States",
+    "url": "https://job-boards.greenhouse.io/janestreet/jobs/6485460002",
+    "score": 100
+  },
+  {
+    "company": "Databricks",
+    "boardToken": "databricks",
+    "id": "8434243002",
+    "title": "Specialist Solutions Architect - Data Scientist / ML Engineer (Financial Services)",
+    "location": "Remote - Georgia; Remote - Illinois; Remote - New York; Remote - North Carolina; Remote - Texas",
+    "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8434243002",
+    "score": 100
+  },
+  {
+    "company": "Databricks",
+    "boardToken": "databricks",
+    "id": "7276195002",
+    "title": "Sr. Machine Learning Engineer ",
+    "location": "San Francisco, California",
+    "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7276195002",
+    "score": 100
+  },
+  {
+    "company": "Stripe",
+    "boardToken": "stripe",
+    "id": "7079044",
+    "title": "Machine Learning Engineer, Payments ML Accelerator",
+    "location": "Seattle; San Francisco; New York City",
+    "url": "https://stripe.com/jobs/search?gh_jid=7079044",
+    "score": 100
+  },
+  {
+    "company": "Stripe",
+    "boardToken": "stripe",
+    "id": "7629052",
+    "title": "Machine Learning Engineer, Stripe Assistant ",
+    "location": "Seattle; San Francisco; New York City; Remote",
+    "url": "https://stripe.com/jobs/search?gh_jid=7629052",
+    "score": 100
+  },
+  {
+    "company": "Stripe",
+    "boardToken": "stripe",
+    "id": "7216668",
+    "title": "PhD Machine Learning Engineer, New Grad",
+    "location": "San Francisco, New York City, Seattle",
+    "url": "https://stripe.com/jobs/search?gh_jid=7216668",
+    "score": 100
+  },
+  {
+    "company": "Instacart",
+    "boardToken": "instacart",
+    "id": "7565189",
+    "title": "Machine Learning Engineer II, Economics",
+    "location": "United States - Remote",
+    "url": "https://instacart.careers/job/?gh_jid=7565189",
+    "score": 100
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "6121450",
+    "title": "Machine Learning Engineer, Core Engineering",
+    "location": "San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US; Remote, US",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=6121450",
+    "score": 100
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "7473497",
+    "title": "Machine Learning Engineer II",
+    "location": "Toronto, ON, CA",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7473497",
+    "score": 100
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "6121543",
+    "title": "Machine Learning Engineer, Monetization Engineering",
+    "location": "San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=6121543",
+    "score": 100
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "7642265",
+    "title": "Machine Learning Engineer, tvScientific",
+    "location": "San Francisco, CA, US; Remote, US",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7642265",
+    "score": 100
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "6121464",
+    "title": "Sr. Machine Learning Engineer, Core Engineering ",
+    "location": "San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=6121464",
+    "score": 100
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "5691478",
+    "title": "Sr. Machine Learning Engineer, Growth",
+    "location": "Toronto, ON, CA",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=5691478",
+    "score": 100
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "6121551",
+    "title": "Sr. Machine Learning Engineer, Monetization Engineering",
+    "location": "San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=6121551",
+    "score": 100
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "7642268",
+    "title": "Sr. Machine Learning Engineer, tvScientific",
+    "location": "San Francisco, CA, US; Remote, US",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7642268",
+    "score": 100
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7455853",
+    "title": "Machine Learning Engineer",
+    "location": "Mountain View, CA, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7455853",
+    "score": 100
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7539786",
+    "title": "Machine Learning Engineer, 3D Object Detection  (PhD New Grad)",
+    "location": "Mountain View, CA USA;  San Francisco, CA USA;",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7539786",
+    "score": 100
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7446320",
+    "title": "Machine Learning Engineer, ADV Systems",
+    "location": "Mountain View, California, United States; San Francisco, California, United States",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7446320",
+    "score": 100
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7446301",
+    "title": "Machine Learning Engineer, Data & Systems ",
+    "location": "Mountain View, California, United States; San Francisco, California, United States",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7446301",
+    "score": 100
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7429811",
+    "title": "Machine Learning Engineer - Mapping",
+    "location": "Mountain View, CA, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7429811",
+    "score": 100
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7429791",
+    "title": "Machine Learning Engineer - Mapping",
+    "location": "Mountain View, CA, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7429791",
+    "score": 100
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7090492",
+    "title": "Machine Learning Engineer, Mapping",
+    "location": "Mountain View, CA, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7090492",
+    "score": 100
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7426598",
+    "title": "Machine Learning Engineer, ML Flywheel",
+    "location": "Mountain View, CA, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7426598",
+    "score": 100
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7424806",
+    "title": "Machine Learning Engineer, ML Resources",
+    "location": "Mountain View, CA, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7424806",
+    "score": 100
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7446322",
+    "title": "Machine Learning Engineer, Model Optimization",
+    "location": "Mountain View, California, United States; San Francisco, California, United States",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7446322",
+    "score": 100
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7446279",
+    "title": "Machine Learning Engineer, Perception Modeling",
+    "location": "Mountain View, CA, USA; San Francisco, CA, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7446279",
+    "score": 100
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "6506689",
+    "title": "Machine Learning Engineer, Prediction & Planning",
+    "location": "Mountain View, CA, USA; San Francisco, CA, USA; New York City, NY, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=6506689",
+    "score": 100
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "6506008",
+    "title": "Machine Learning Engineer, Runtime & Optimization",
+    "location": "Mountain View, California, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=6506008",
+    "score": 100
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "6499165",
+    "title": "Machine Learning Engineer, Simulation Realism",
+    "location": "Mountain View, CA, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=6499165",
+    "score": 100
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "6688617",
+    "title": "Machine Learning Engineer, Simulation Realism ",
+    "location": "Mountain View, CA, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=6688617",
+    "score": 100
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7707980",
+    "title": "Machine Learning Engineer -  VLM/LLM Integration",
+    "location": "Mountain View, CA, USA; New York, NY, US; Seattle, WA, US",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7707980",
+    "score": 100
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7536948",
+    "title": "ML Engineer, Foundation Model Evaluation",
+    "location": "Mountain View, CA, USA; Remote US",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7536948",
+    "score": 100
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7536801",
+    "title": "ML Engineer, Foundation Model Infrastructure",
+    "location": "Mountain View, CA, USA; Remote US",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7536801",
+    "score": 100
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7429718",
+    "title": "Senior Software Engineer, Simulation ML Infrastructure",
+    "location": "Mountain View, CA, USA; San Francisco, CA, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7429718",
+    "score": 100
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "4778843008",
+    "title": "ML Infrastructure Engineer, Safeguards",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/4778843008",
+    "score": 95
+  },
+  {
+    "company": "Nuro",
+    "boardToken": "nuro",
+    "id": "7366266",
+    "title": "Software Engineer, ML Infrastructure - Internship",
+    "location": "Mountain View, California (HQ)",
+    "url": "https://nuro.ai/careersitem?gh_jid=7366266",
+    "score": 95
+  },
+  {
+    "company": "Nuro",
+    "boardToken": "nuro",
+    "id": "7446303",
+    "title": "Software Engineer, ML Infrastructure, Optimization",
+    "location": "Mountain View, California (HQ)",
+    "url": "https://nuro.ai/careersitem?gh_jid=7446303",
+    "score": 95
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7436243",
+    "title": "Software Engineer, Marketplace Optimization - ML Infra",
+    "location": "Mountain View, CA, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7436243",
+    "score": 95
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7483979",
+    "title": "Software Engineer, Planner Reasoning, ML Infrastructure",
+    "location": "Mountain View, California, United States; San Francisco, California, United States",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7483979",
+    "score": 95
+  },
+  {
+    "company": "IMC Trading",
+    "boardToken": "imc",
+    "id": "4721116101",
+    "title": "Principal Machine Learning Engineer ",
+    "location": "Amsterdam, Netherlands; Chicago, United States; Hong Kong, Hong Kong; London, United Kingdom; New York, United States; Sydney,  Australia",
+    "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4721116101",
+    "score": 90
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4597399005",
+    "title": "Senior Forward Deployed AI Engineer, Enterprise ",
+    "location": "San Francisco, CA; New York, NY",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4597399005",
+    "score": 90
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4658162005",
+    "title": "Senior/Staff Machine Learning Engineer, General Agents, Enterprise GenAI",
+    "location": "San Francisco, CA; New York, NY",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4658162005",
+    "score": 90
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4654382005",
+    "title": "Staff Machine Learning Engineer, Public Sector",
+    "location": "San Francisco, CA; St. Louis, MO; New York, NY; Washington, DC",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4654382005",
+    "score": 90
+  },
+  {
+    "company": "Databricks",
+    "boardToken": "databricks",
+    "id": "7859597002",
+    "title": "Senior Applied AI Engineer – ML for Systems & Infrastructure",
+    "location": "San Francisco, California",
+    "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7859597002",
+    "score": 90
+  },
+  {
+    "company": "Databricks",
+    "boardToken": "databricks",
+    "id": "8401114002",
+    "title": "Staff Machine Learning Engineer ",
+    "location": "San Francisco, California",
+    "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8401114002",
+    "score": 90
+  },
+  {
+    "company": "Airbnb",
+    "boardToken": "airbnb",
+    "id": "7005605",
+    "title": "Senior Staff Machine Learning Engineer, Communication & Connectivity",
+    "location": "Remote - USA",
+    "url": "https://careers.airbnb.com/positions/7005605?gh_jid=7005605",
+    "score": 90
+  },
+  {
+    "company": "Airbnb",
+    "boardToken": "airbnb",
+    "id": "6757302",
+    "title": "Senior Staff Machine Learning Engineer, Data & Eval",
+    "location": "United States",
+    "url": "https://careers.airbnb.com/positions/6757302?gh_jid=6757302",
+    "score": 90
+  },
+  {
+    "company": "Airbnb",
+    "boardToken": "airbnb",
+    "id": "7028263",
+    "title": "Senior Staff Machine Learning Engineer – GenAI",
+    "location": "United States",
+    "url": "https://careers.airbnb.com/positions/7028263?gh_jid=7028263",
+    "score": 90
+  },
+  {
+    "company": "Airbnb",
+    "boardToken": "airbnb",
+    "id": "7592146",
+    "title": "Senior Staff Machine Learning Engineer, Trust",
+    "location": "Remote - USA",
+    "url": "https://careers.airbnb.com/positions/7592146?gh_jid=7592146",
+    "score": 90
+  },
+  {
+    "company": "Airbnb",
+    "boardToken": "airbnb",
+    "id": "7116975",
+    "title": "Staff Machine Learning Engineer - Community Support Engineering",
+    "location": "Remote - USA",
+    "url": "https://careers.airbnb.com/positions/7116975?gh_jid=7116975",
+    "score": 90
+  },
+  {
+    "company": "Airbnb",
+    "boardToken": "airbnb",
+    "id": "7454348",
+    "title": "Staff Machine Learning Engineer, Listings and Host Tools Data and AI",
+    "location": "Remote-USA",
+    "url": "https://careers.airbnb.com/positions/7454348?gh_jid=7454348",
+    "score": 90
+  },
+  {
+    "company": "Instacart",
+    "boardToken": "instacart",
+    "id": "6967732",
+    "title": "Senior Staff Machine Learning Engineer, Ads Quality",
+    "location": "United States - Remote",
+    "url": "https://instacart.careers/job/?gh_jid=6967732",
+    "score": 90
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "7586364",
+    "title": "Director, Machine Learning Engineering – Growth ",
+    "location": "San Francisco, CA, US; Remote, US",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7586364",
+    "score": 90
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "6963868",
+    "title": "Principal Machine Learning Engineer, Ads Delivery",
+    "location": "San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=6963868",
+    "score": 90
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "7488434",
+    "title": "Principal Machine Learning Engineer, Growth",
+    "location": "San Francisco, CA, US; Remote, US",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7488434",
+    "score": 90
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "6908633",
+    "title": "Sr. Staff Machine Learning Engineer, Homefeed",
+    "location": "San Francisco, CA, US; Remote, US",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=6908633",
+    "score": 90
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "7531060",
+    "title": "Staff Machine Learning Engineer, Content Quality Signals",
+    "location": "San Francisco, CA, US; Remote, US",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7531060",
+    "score": 90
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "6133257",
+    "title": "Staff Machine Learning Engineer, Monetization",
+    "location": "San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=6133257",
+    "score": 90
+  },
+  {
+    "company": "Coinbase",
+    "boardToken": "coinbase",
+    "id": "7648987",
+    "title": "Staff Machine Learning Engineer - Platform (Core Automation)",
+    "location": "Remote - USA",
+    "url": "https://www.coinbase.com/careers/positions/7648987?gh_jid=7648987",
+    "score": 90
+  },
+  {
+    "company": "Nuro",
+    "boardToken": "nuro",
+    "id": "7303237",
+    "title": "Senior/Staff Machine Learning Engineer, Training Runtime Performance ",
+    "location": "Mountain View, California (HQ)",
+    "url": "https://nuro.ai/careersitem?gh_jid=7303237",
+    "score": 90
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7456078",
+    "title": "Senior/Staff Machine Learning Engineer",
+    "location": "Mountain View, CA, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7456078",
+    "score": 90
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "6809263",
+    "title": "Senior Staff Machine Learning Engineer, Perception",
+    "location": "Mountain View, California, United States",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=6809263",
+    "score": 90
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7430495",
+    "title": "Senior Staff Machine Learning Engineer, Simulation",
+    "location": "Mountain View,CA, USA; San Francisco, CA, USA; New York, NY, USA ",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7430495",
+    "score": 90
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "6669555",
+    "title": "Senior/Staff ML Engineer, 3D/4D World Modeling, Simulation ",
+    "location": "Mountain View, CA, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=6669555",
+    "score": 90
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7421737",
+    "title": "Senior Staff ML Engineer, Driver Understanding and Evaluation",
+    "location": "Mountain View,  CA, United States ",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7421737",
+    "score": 90
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7442152",
+    "title": "Staff Machine Learning Engineer",
+    "location": "Mountain View, CA, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7442152",
+    "score": 90
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7488589",
+    "title": "Staff Machine Learning Engineer, Perception, Sensor Pipelines ",
+    "location": "Mountain View, California, United States; San Francisco, California, United States",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7488589",
+    "score": 90
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7483051",
+    "title": "Staff Machine Learning Engineer, Simulation ",
+    "location": "New York, NY, USA; Mountain View, CA, USA; San Francisco, CA, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7483051",
+    "score": 90
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7595124",
+    "title": "Staff Machine Learning Engineer – VLM/LLM Evaluation",
+    "location": "Mountain View, CA, US; New York, NY, US; Seattle, WA, US",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7595124",
+    "score": 90
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7450706",
+    "title": "Staff Tech Lead, Machine Learning Engineer, Perception",
+    "location": "Mountain View, California, United States; San Francisco, California, United States",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7450706",
+    "score": 90
+  },
+  {
+    "company": "Point72",
+    "boardToken": "point72",
+    "id": "8351985002",
+    "title": "AI Engineer – Investment Research & Workflows",
+    "location": "New York",
+    "url": "https://boards.greenhouse.io/point72/jobs/8351985002?gh_jid=8351985002",
+    "score": 85
+  },
+  {
+    "company": "Point72",
+    "boardToken": "point72",
+    "id": "8041302002",
+    "title": "AI Engineer, IS",
+    "location": "United States",
+    "url": "https://boards.greenhouse.io/point72/jobs/8041302002?gh_jid=8041302002",
+    "score": 85
+  },
+  {
+    "company": "Point72",
+    "boardToken": "point72",
+    "id": "7661997002",
+    "title": "NLP / AI Engineer",
+    "location": "New York",
+    "url": "https://boards.greenhouse.io/point72/jobs/7661997002?gh_jid=7661997002",
+    "score": 85
+  },
+  {
+    "company": "DRW",
+    "boardToken": "drweng",
+    "id": "6586001",
+    "title": "AI Engineer",
+    "location": "Chicago",
+    "url": "https://job-boards.greenhouse.io/drweng/jobs/6586001",
+    "score": 85
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "5068226008",
+    "title": "Applied AI Engineer, Beneficial Deployments",
+    "location": "San Francisco, CA | New York City, NY",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5068226008",
+    "score": 85
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "5057647008",
+    "title": "Applied AI Engineer (Digital Natives Business) ",
+    "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5057647008",
+    "score": 85
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "5111942008",
+    "title": "Applied AI Engineer, Life Sciences (Beneficial Deployments)",
+    "location": "San Francisco, CA | New York City, NY",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5111942008",
+    "score": 85
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "5073277008",
+    "title": "Applied AI Engineer (Startups)",
+    "location": "San Francisco, CA | New York City, NY",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5073277008",
+    "score": 85
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4514173005",
+    "title": "Applied AI Engineer, Enterprise GenAI",
+    "location": "San Francisco, CA; New York, NY",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4514173005",
+    "score": 85
+  },
+  {
+    "company": "Databricks",
+    "boardToken": "databricks",
+    "id": "8099751002",
+    "title": "AI Engineer - FDE (Forward Deployed Engineer)",
+    "location": "Remote - India",
+    "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8099751002",
+    "score": 85
+  },
+  {
+    "company": "Databricks",
+    "boardToken": "databricks",
+    "id": "8335860002",
+    "title": "AI Engineer - FDE (Forward Deployed Engineer)",
+    "location": "United States",
+    "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8335860002",
+    "score": 85
+  },
+  {
+    "company": "Databricks",
+    "boardToken": "databricks",
+    "id": "8415203002",
+    "title": "AI Engineer - FDE (Forward Deployed Engineer) - U.S. Federal Sector",
+    "location": "Maryland; Virginia; Washington, D.C.",
+    "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8415203002",
+    "score": 85
+  },
+  {
+    "company": "Stripe",
+    "boardToken": "stripe",
+    "id": "7286376",
+    "title": "AI/ML Engineering Manager, Payment Intelligence",
+    "location": "US-SF, US-NYC, US-SEA",
+    "url": "https://stripe.com/jobs/search?gh_jid=7286376",
+    "score": 85
+  },
+  {
+    "company": "Airbnb",
+    "boardToken": "airbnb",
+    "id": "7665266",
+    "title": "Manager, Machine Learning Engineering - Relevance and Personalization",
+    "location": "United States",
+    "url": "https://careers.airbnb.com/positions/7665266?gh_jid=7665266",
+    "score": 85
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "7075176",
+    "title": "Manager II, Machine Learning Engineering, Core Engineering ",
+    "location": "San Francisco, CA, US;  Remote, US",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7075176",
+    "score": 85
+  },
+  {
+    "company": "Nuro",
+    "boardToken": "nuro",
+    "id": "6662161",
+    "title": "Senior/Staff Software Engineer, ML Infrastructure, Optimization",
+    "location": "Mountain View, California (HQ)",
+    "url": "https://nuro.ai/careersitem?gh_jid=6662161",
+    "score": 85
+  },
+  {
+    "company": "Stripe",
+    "boardToken": "stripe",
+    "id": "7216664",
+    "title": "PhD Machine Learning Engineer, Intern",
+    "location": "San Francisco, New York City, Seattle",
+    "url": "https://stripe.com/jobs/search?gh_jid=7216664",
+    "score": 80
+  },
+  {
+    "company": "Airbnb",
+    "boardToken": "airbnb",
+    "id": "7669906",
+    "title": "Machine Learning Engineering Intern (PhD)",
+    "location": "United States",
+    "url": "https://careers.airbnb.com/positions/7669906?gh_jid=7669906",
+    "score": 80
+  },
+  {
+    "company": "Instacart",
+    "boardToken": "instacart",
+    "id": "5917202",
+    "title": "Machine Learning Engineer, PhD Intern",
+    "location": "United States - Remote",
+    "url": "https://instacart.careers/job/?gh_jid=5917202",
+    "score": 80
+  },
+  {
+    "company": "Coinbase",
+    "boardToken": "coinbase",
+    "id": "7294075",
+    "title": "Machine Learning Engineer Intern",
+    "location": "Hybrid - San Francisco, CA",
+    "url": "https://www.coinbase.com/careers/positions/7294075?gh_jid=7294075",
+    "score": 80
+  },
+  {
+    "company": "Coinbase",
+    "boardToken": "coinbase",
+    "id": "7580544",
+    "title": "Senior Applied Scientist - Pricing",
+    "location": "Remote - USA",
+    "url": "https://www.coinbase.com/careers/positions/7580544?gh_jid=7580544",
+    "score": 80
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7252833",
+    "title": "2026 Intern, PhD, Machine Learning Engineer, Simulation",
+    "location": "Mountain View, CA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7252833",
+    "score": 80
+  },
+  {
+    "company": "Point72",
+    "boardToken": "point72",
+    "id": "7769261002",
+    "title": "Senior Data Engineer, Proprietary Research ",
+    "location": "New York",
+    "url": "https://boards.greenhouse.io/point72/jobs/7769261002?gh_jid=7769261002",
+    "score": 75
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4591411005",
+    "title": "Director, Applied AI Engineering- Enterprise",
+    "location": "San Francisco, CA; New York, NY",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4591411005",
+    "score": 75
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "7561938",
+    "title": "Staff Applied AI Engineer",
+    "location": "Mountain View, California, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/7561938",
+    "score": 75
+  },
+  {
+    "company": "Figma",
+    "boardToken": "figma",
+    "id": "5707966004",
+    "title": "AI Applied Scientist",
+    "location": "San Francisco, CA • New York, NY • United States",
+    "url": "https://boards.greenhouse.io/figma/jobs/5707966004?gh_jid=5707966004",
+    "score": 75
+  },
+  {
+    "company": "Discord",
+    "boardToken": "discord",
+    "id": "8373431002",
+    "title": "Senior Data Engineer, Analytics",
+    "location": "San Francisco Bay Area",
+    "url": "https://job-boards.greenhouse.io/discord/jobs/8373431002",
+    "score": 75
+  },
+  {
+    "company": "Robinhood",
+    "boardToken": "robinhood",
+    "id": "4738660",
+    "title": "Senior Software Engineer, Data Engineering",
+    "location": "Menlo Park, CA",
+    "url": "https://boards.greenhouse.io/robinhood/jobs/4738660?t=gh_src=&gh_jid=4738660",
+    "score": 75
+  },
+  {
+    "company": "Instacart",
+    "boardToken": "instacart",
+    "id": "7688594",
+    "title": "Senior Data Engineer, Finance",
+    "location": "Canada - Remote (ON, AB, BC, or NS Only)",
+    "url": "https://instacart.careers/job/?gh_jid=7688594",
+    "score": 75
+  },
+  {
+    "company": "Lyft",
+    "boardToken": "lyft",
+    "id": "8403370002",
+    "title": "Applied Scientist- Pricing, Dynamic Pricing & Offer Selection",
+    "location": "New York, NY",
+    "url": "https://app.careerpuck.com/job-board/lyft/job/8403370002?gh_jid=8403370002",
+    "score": 75
+  },
+  {
+    "company": "Lyft",
+    "boardToken": "lyft",
+    "id": "8402813002",
+    "title": "Applied Scientist- Pricing, Dynamic Pricing & Offer Selection",
+    "location": "San Francisco, CA",
+    "url": "https://app.careerpuck.com/job-board/lyft/job/8402813002?gh_jid=8402813002",
+    "score": 75
+  },
+  {
+    "company": "Lyft",
+    "boardToken": "lyft",
+    "id": "8404373002",
+    "title": "Applied Scientist - Pricing, Rider Engagement",
+    "location": "New York, NY",
+    "url": "https://app.careerpuck.com/job-board/lyft/job/8404373002?gh_jid=8404373002",
+    "score": 75
+  },
+  {
+    "company": "Lyft",
+    "boardToken": "lyft",
+    "id": "8403401002",
+    "title": "Applied Scientist - Pricing, Rider Engagement",
+    "location": "San Francisco, CA",
+    "url": "https://app.careerpuck.com/job-board/lyft/job/8403401002?gh_jid=8403401002",
+    "score": 75
+  },
+  {
+    "company": "Point72",
+    "boardToken": "point72",
+    "id": "7829230002",
+    "title": "Data Engineer",
+    "location": "New York",
+    "url": "https://boards.greenhouse.io/point72/jobs/7829230002?gh_jid=7829230002",
+    "score": 70
+  },
+  {
+    "company": "Point72",
+    "boardToken": "point72",
+    "id": "8303740002",
+    "title": "Data Engineer",
+    "location": "New York, New York",
+    "url": "https://boards.greenhouse.io/point72/jobs/8303740002?gh_jid=8303740002",
+    "score": 70
+  },
+  {
+    "company": "Point72",
+    "boardToken": "point72",
+    "id": "8448917002",
+    "title": "Data Engineer, Knowledge Graph   ",
+    "location": "New York, NY",
+    "url": "https://boards.greenhouse.io/point72/jobs/8448917002?gh_jid=8448917002",
+    "score": 70
+  },
+  {
+    "company": "Point72",
+    "boardToken": "point72",
+    "id": "7667745002",
+    "title": "Data Engineer, Proprietary Research ",
+    "location": "New York, NY",
+    "url": "https://boards.greenhouse.io/point72/jobs/7667745002?gh_jid=7667745002",
+    "score": 70
+  },
+  {
+    "company": "Point72",
+    "boardToken": "point72",
+    "id": "7992718002",
+    "title": "Data Engineer, Technology ",
+    "location": "New York | Stamford ",
+    "url": "https://boards.greenhouse.io/point72/jobs/7992718002?gh_jid=7992718002",
+    "score": 70
+  },
+  {
+    "company": "DRW",
+    "boardToken": "drweng",
+    "id": "7421010",
+    "title": "Data Engineer, Cumberland/FICCO",
+    "location": "Chicago",
+    "url": "https://job-boards.greenhouse.io/drweng/jobs/7421010",
+    "score": 70
+  },
+  {
+    "company": "Jane Street",
+    "boardToken": "janestreet",
+    "id": "6558007002",
+    "title": "Data Engineer",
+    "location": "New York, New York, United States",
+    "url": "https://job-boards.greenhouse.io/janestreet/jobs/6558007002",
+    "score": 70
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "4956672008",
+    "title": "Analytics Data Engineer",
+    "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/4956672008",
+    "score": 70
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "5132578008",
+    "title": "Manager, Applied AI Engineering, Life Sciences (Beneficial Deployments)",
+    "location": "San Francisco, CA | New York City, NY",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5132578008",
+    "score": 70
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4602177005",
+    "title": "Forward Deployed AI Engineering Manager, Enterprise ",
+    "location": "San Francisco, CA; New York, NY",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4602177005",
+    "score": 70
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "7711086",
+    "title": "Data Engineer, Core Analytics Team",
+    "location": "Mountain View, California, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/7711086",
+    "score": 70
+  },
+  {
+    "company": "Databricks",
+    "boardToken": "databricks",
+    "id": "8297797002",
+    "title": "Senior GenAI Research Engineer - Optimization and Kernels",
+    "location": "San Francisco, California",
+    "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8297797002",
+    "score": 70
+  },
+  {
+    "company": "Databricks",
+    "boardToken": "databricks",
+    "id": "8373533002",
+    "title": "Sr. Product Designer, Data Engineering",
+    "location": "San Francisco, California",
+    "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8373533002",
+    "score": 70
+  },
+  {
+    "company": "Databricks",
+    "boardToken": "databricks",
+    "id": "8373566002",
+    "title": "Sr. Product Designer, Data Engineering",
+    "location": "Seattle, Washington",
+    "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8373566002",
+    "score": 70
+  },
+  {
+    "company": "Figma",
+    "boardToken": "figma",
+    "id": "5220003004",
+    "title": "Data Engineer",
+    "location": "San Francisco, CA • New York, NY • United States",
+    "url": "https://boards.greenhouse.io/figma/jobs/5220003004?gh_jid=5220003004",
+    "score": 70
+  },
+  {
+    "company": "Discord",
+    "boardToken": "discord",
+    "id": "8371252002",
+    "title": "Data Engineer, Analytics",
+    "location": "San Francisco Bay Area",
+    "url": "https://job-boards.greenhouse.io/discord/jobs/8371252002",
+    "score": 70
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "7642272",
+    "title": "Sr. Data Engineer, tvScientific",
+    "location": "San Francisco, CA, US; Remote, US",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7642272",
+    "score": 70
+  },
+  {
+    "company": "Lyft",
+    "boardToken": "lyft",
+    "id": "8414150002",
+    "title": "Data Engineer, Corporate Data & Analytics",
+    "location": "Ukraine Anywhere",
+    "url": "https://app.careerpuck.com/job-board/lyft/job/8414150002?gh_jid=8414150002",
+    "score": 70
+  },
+  {
+    "company": "Nuro",
+    "boardToken": "nuro",
+    "id": "6881478",
+    "title": "Senior Research Engineer, Collision Avoidance Modeling",
+    "location": "Mountain View, California (HQ)",
+    "url": "https://nuro.ai/careersitem?gh_jid=6881478",
+    "score": 70
+  },
+  {
+    "company": "Nuro",
+    "boardToken": "nuro",
+    "id": "7528153",
+    "title": "Technical Lead Manager, ML Platform Infrastructure",
+    "location": "Mountain View, California (HQ)",
+    "url": "https://nuro.ai/careersitem?gh_jid=7528153",
+    "score": 70
+  },
+  {
+    "company": "Brex",
+    "boardToken": "brex",
+    "id": "8366850002",
+    "title": "Data Engineer",
+    "location": "San Francisco, California, United States",
+    "url": "https://www.brex.com/careers/8366850002?gh_jid=8366850002",
+    "score": 70
+  },
+  {
+    "company": "DRW",
+    "boardToken": "drweng",
+    "id": "6973885",
+    "title": "Research Engineer",
+    "location": "New York City",
+    "url": "https://job-boards.greenhouse.io/drweng/jobs/6973885",
+    "score": 65
+  },
+  {
+    "company": "DRW",
+    "boardToken": "drweng",
+    "id": "7097016",
+    "title": "Research Engineer (FICCO)",
+    "location": "Greenwich",
+    "url": "https://job-boards.greenhouse.io/drweng/jobs/7097016",
+    "score": 65
+  },
+  {
+    "company": "DRW",
+    "boardToken": "drweng",
+    "id": "7377915",
+    "title": "Research Engineer (FICCO)",
+    "location": "Chicago",
+    "url": "https://job-boards.greenhouse.io/drweng/jobs/7377915",
+    "score": 65
+  },
+  {
+    "company": "IMC Trading",
+    "boardToken": "imc",
+    "id": "4653321101",
+    "title": "Research Engineer",
+    "location": "Chicago, United States; New York, United States",
+    "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4653321101",
+    "score": 65
+  },
+  {
+    "company": "Jump Trading",
+    "boardToken": "jumptrading",
+    "id": "7141620",
+    "title": "Campus ML Research Engineer (Full-Time)",
+    "location": "Chicago; New York",
+    "url": "https://www.jumptrading.com/hr/job?gh_jid=7141620",
+    "score": 65
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "5062955008",
+    "title": "Applied Safety Research Engineer, Safeguards",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5062955008",
+    "score": 65
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "4949336008",
+    "title": "ML/Research Engineer, Safeguards",
+    "location": "San Francisco, CA | New York City, NY",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/4949336008",
+    "score": 65
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "5123011008",
+    "title": "Offensive Security Research Engineer, Safeguards",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5123011008",
+    "score": 65
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "4949108008",
+    "title": "Privacy Research Engineer, Safeguards",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/4949108008",
+    "score": 65
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "4017544008",
+    "title": "Research Engineer, Agents",
+    "location": "Remote-Friendly (Travel-Required) | San Francisco, CA | Seattle, WA | New York City, NY",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/4017544008",
+    "score": 65
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "5125083008",
+    "title": "Research Engineer, AI Observability",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5125083008",
+    "score": 65
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "5025624008",
+    "title": "Research Engineer, Cybersecurity Reinforcement Learning",
+    "location": "San Francisco, CA | New York City, NY",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5025624008",
+    "score": 65
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "4669581008",
+    "title": "Research Engineer, Discovery",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/4669581008",
+    "score": 65
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "5071132008",
+    "title": "Research Engineer, Economic Research",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5071132008",
+    "score": 65
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "4951064008",
+    "title": "Research Engineer, Environment Scaling",
+    "location": "Remote-Friendly (Travel Required) | San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/4951064008",
+    "score": 65
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "5067100008",
+    "title": "Research Engineer,  Frontier Red Team (Autonomy)",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5067100008",
+    "score": 65
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "4980430008",
+    "title": "Research Engineer, Interpretability",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/4980430008",
+    "score": 65
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "4613568008",
+    "title": "Research Engineer, Machine Learning (Reinforcement Learning) ",
+    "location": "San Francisco, CA | New York City, NY",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/4613568008",
+    "score": 65
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "4616971008",
+    "title": "Research Engineer, Pretraining",
+    "location": "Remote-Friendly (Travel-Required) | San Francisco, CA | Seattle, WA | New York City, NY",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/4616971008",
+    "score": 65
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "4938432008",
+    "title": "Research Engineer, Pretraining Scaling",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/4938432008",
+    "score": 65
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "4613592008",
+    "title": "Research Engineer, Production Model Post-Training",
+    "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/4613592008",
+    "score": 65
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "5024831008",
+    "title": "Research Engineer, Reward Models Platform",
+    "location": "Remote-Friendly (Travel-Required) | San Francisco, CA | Seattle, WA | New York City, NY",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5024831008",
+    "score": 65
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "4631822008",
+    "title": "Research Engineer / Scientist, Alignment Science",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/4631822008",
+    "score": 65
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "5076477008",
+    "title": "Research Engineer / Scientist, Frontier Red Team (Cyber)",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5076477008",
+    "score": 65
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "5076606008",
+    "title": "Research Engineer / Scientist, Societal Impacts",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5076606008",
+    "score": 65
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "5061517008",
+    "title": "Research Engineer, Universes",
+    "location": "Remote-Friendly (Travel-Required) | San Francisco, CA | Seattle, WA | New York City, NY",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5061517008",
+    "score": 65
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "4946308008",
+    "title": "Research Engineer, Virtual Collaborator (Cowork)",
+    "location": "New York City, NY; San Francisco, CA; Seattle, WA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/4946308008",
+    "score": 65
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4629589005",
+    "title": "AI Research Engineer, Enterprise Evaluations",
+    "location": "San Francisco, CA; New York, NY",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4629589005",
+    "score": 65
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4625345005",
+    "title": " Machine Learning Research Engineer, Agent Data Foundation - Enterprise GenAI",
+    "location": "San Francisco, CA; New York, NY",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4625345005",
+    "score": 65
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4625344005",
+    "title": "Machine Learning Research Engineer, Agents - Enterprise GenAI",
+    "location": "San Francisco, CA; New York, NY",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4625344005",
+    "score": 65
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4490301005",
+    "title": "Machine Learning Research Engineer, GenAI Applied ML",
+    "location": "San Francisco, CA; New York, NY",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4490301005",
+    "score": 65
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4600908005",
+    "title": "Machine Learning Research Engineer - Robotics",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4600908005",
+    "score": 65
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4625341005",
+    "title": "Machine Learning Systems Research Engineer, Agent Post-training - Enterprise GenAI",
+    "location": "San Francisco, CA; New York, NY",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4625341005",
+    "score": 65
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4534631005",
+    "title": "ML Research Engineer, ML Systems",
+    "location": "San Francisco, CA; Seattle, WA; New York, NY",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4534631005",
+    "score": 65
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "7374585",
+    "title": "Research Engineer, Agentic Safety",
+    "location": "Mountain View, California, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/7374585",
+    "score": 65
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "7712358",
+    "title": "Research Engineer, AlphaEarth, Science",
+    "location": "London, UK; New York City, New York, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/7712358",
+    "score": 65
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "7543224",
+    "title": "Research Engineer, Applied Robotics",
+    "location": "Mountain View, California, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/7543224",
+    "score": 65
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "7411063",
+    "title": "Research Engineer, Developer Experience, Gemini Robotics",
+    "location": "Mountain View, California, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/7411063",
+    "score": 65
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "7493360",
+    "title": "Research Engineer, Frontier Safety Risk Assessment",
+    "location": "London, UK; New York City, New York, US; San Francisco, California, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/7493360",
+    "score": 65
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "7263484",
+    "title": "Research Engineer, Gemini Post Training, Model Behavior",
+    "location": "Mountain View, California, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/7263484",
+    "score": 65
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "7288535",
+    "title": "Research Engineer, GenMedia",
+    "location": "Mountain View, California, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/7288535",
+    "score": 65
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "6736786",
+    "title": "Research Engineer, Media Integrity",
+    "location": "Mountain View, California, US; San Francisco, California, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/6736786",
+    "score": 65
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "7339604",
+    "title": "Research Engineer, Multimodal Generative AI (Image/Video)",
+    "location": "Kirkland, Washington, US; Seattle, Washington, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/7339604",
+    "score": 65
+  },
+  {
+    "company": "Instacart",
+    "boardToken": "instacart",
+    "id": "7585605",
+    "title": "Senior Software Engineer II, Data Platform",
+    "location": "(Canada - Remote (ON, AB, BC, or NS Only))",
+    "url": "https://instacart.careers/job/?gh_jid=7585605",
+    "score": 65
+  },
+  {
+    "company": "Coinbase",
+    "boardToken": "coinbase",
+    "id": "5670626",
+    "title": "Staff Applied Scientist - Causal Inference",
+    "location": "Remote - USA",
+    "url": "https://www.coinbase.com/careers/positions/5670626?gh_jid=5670626",
+    "score": 65
+  },
+  {
+    "company": "Duolingo",
+    "boardToken": "duolingo",
+    "id": "8169815002",
+    "title": "AI Research Engineer, New PhD Graduate",
+    "location": "New York, NY",
+    "url": "https://careers.duolingo.com/jobs/8169815002?gh_jid=8169815002",
+    "score": 65
+  },
+  {
+    "company": "Brex",
+    "boardToken": "brex",
+    "id": "8430197002",
+    "title": "Senior Software Engineer, Product Data Platform",
+    "location": "Seattle, Washington, United States",
+    "url": "https://www.brex.com/careers/8430197002?gh_jid=8430197002",
+    "score": 65
+  },
+  {
+    "company": "Brex",
+    "boardToken": "brex",
+    "id": "8430182002",
+    "title": "Senior Software Engineer, Product Data Platform",
+    "location": "San Francisco, California, United States",
+    "url": "https://www.brex.com/careers/8430182002?gh_jid=8430182002",
+    "score": 65
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "5024835008",
+    "title": "Senior Research Scientist, Reward Models",
+    "location": "Remote-Friendly (Travel Required) | San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5024835008",
+    "score": 60
+  },
+  {
+    "company": "Databricks",
+    "boardToken": "databricks",
+    "id": "8367942002",
+    "title": "Data Platform Solutions Architect (Professional Services)",
+    "location": "Remote - United Kingdom",
+    "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8367942002",
+    "score": 60
+  },
+  {
+    "company": "Stripe",
+    "boardToken": "stripe",
+    "id": "7545459",
+    "title": "Software Engineer, Product Security Data Platforms",
+    "location": "Seattle",
+    "url": "https://stripe.com/jobs/search?gh_jid=7545459",
+    "score": 60
+  },
+  {
+    "company": "Airbnb",
+    "boardToken": "airbnb",
+    "id": "7674700",
+    "title": "Data Platform Product Lead",
+    "location": "United States",
+    "url": "https://careers.airbnb.com/positions/7674700?gh_jid=7674700",
+    "score": 60
+  },
+  {
+    "company": "Airbnb",
+    "boardToken": "airbnb",
+    "id": "7463663",
+    "title": "Senior Staff Data Engineer, Marketplaces DNA",
+    "location": "United States",
+    "url": "https://careers.airbnb.com/positions/7463663?gh_jid=7463663",
+    "score": 60
+  },
+  {
+    "company": "Airbnb",
+    "boardToken": "airbnb",
+    "id": "7012829",
+    "title": "Staff Data Engineer - Data AI-Listings & Structured Data",
+    "location": "United States",
+    "url": "https://careers.airbnb.com/positions/7012829?gh_jid=7012829",
+    "score": 60
+  },
+  {
+    "company": "Discord",
+    "boardToken": "discord",
+    "id": "8396927002",
+    "title": "Software Engineer, Data Platform",
+    "location": "San Francisco Bay Area",
+    "url": "https://job-boards.greenhouse.io/discord/jobs/8396927002",
+    "score": 60
+  },
+  {
+    "company": "Discord",
+    "boardToken": "discord",
+    "id": "8299493002",
+    "title": "Staff Data Engineer, Ads",
+    "location": "Remote (U.S.)",
+    "url": "https://job-boards.greenhouse.io/discord/jobs/8299493002",
+    "score": 60
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "7642253",
+    "title": "Staff Data Engineer, tvScientific",
+    "location": "San Francisco, CA, US; Remote, US",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7642253",
+    "score": 60
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "7642270",
+    "title": "Staff Data Engineer, tvScientific",
+    "location": "San Francisco, CA, US; Remote, US",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7642270",
+    "score": 60
+  },
+  {
+    "company": "Lyft",
+    "boardToken": "lyft",
+    "id": "8448176002",
+    "title": "Software Engineer, Data Platform",
+    "location": "San Francisco, CA",
+    "url": "https://app.careerpuck.com/job-board/lyft/job/8448176002?gh_jid=8448176002",
+    "score": 60
+  },
+  {
+    "company": "Nuro",
+    "boardToken": "nuro",
+    "id": "7095296",
+    "title": "Senior ML Research Scientist, End-to-End Autonomous Driving",
+    "location": "Mountain View, California (HQ)",
+    "url": "https://nuro.ai/careersitem?gh_jid=7095296",
+    "score": 60
+  },
+  {
+    "company": "Nuro",
+    "boardToken": "nuro",
+    "id": "7273119",
+    "title": "Senior ML Research Scientist, Perception Foundation Encoder",
+    "location": "Mountain View, California (HQ)",
+    "url": "https://nuro.ai/careersitem?gh_jid=7273119",
+    "score": 60
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7469421",
+    "title": "Senior Applied Research Scientist, Perception ",
+    "location": "Mountain View, CA USA;  San Francisco, CA USA;",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7469421",
+    "score": 60
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7159299",
+    "title": "Senior Research Scientist, Foundation Model for Simulation",
+    "location": "Mountain View, CA USA; San Francisco, CA USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7159299",
+    "score": 60
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7572081",
+    "title": "Senior Research Scientist, Foundation Model (LLM/VLM)",
+    "location": "Mountain View, CA, USA; San Francisco, CA, USA; New York City, NY, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7572081",
+    "score": 60
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "5125387008",
+    "title": "Analytics Data Engineering Manager, Product",
+    "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5125387008",
+    "score": 55
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "5066977008",
+    "title": "Biological Safety Research Scientist",
+    "location": "San Francisco, CA | New York City, NY",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5066977008",
+    "score": 55
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "4520279008",
+    "title": "[Expression of Interest] Research Scientist / Engineer, Alignment Finetuning",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/4520279008",
+    "score": 55
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "4532887008",
+    "title": "[Expression of Interest] Research Scientist / Engineer, Honesty",
+    "location": "New York City, NY; San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/4532887008",
+    "score": 55
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "5103788008",
+    "title": "Research Scientist, Frontier Red Team (Emerging Risks)",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5103788008",
+    "score": 55
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "4980427008",
+    "title": "Research Scientist, Interpretability",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/4980427008",
+    "score": 55
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "5076616008",
+    "title": "Research Scientist, Societal Impacts",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5076616008",
+    "score": 55
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "4593216008",
+    "title": "Staff Research Engineer, Discovery Team",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/4593216008",
+    "score": 55
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4605596005",
+    "title": "Machine Learning Research Scientist / Engineer, Reasoning",
+    "location": "San Francisco, CA; Seattle, WA; New York, NY",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4605596005",
+    "score": 55
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4625337005",
+    "title": "Staff Machine Learning Research Engineer, Agent Post-training - Enterprise GenAI",
+    "location": "San Francisco, CA; New York, NY",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4625337005",
+    "score": 55
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "7171455",
+    "title": "Principal Research Engineer, Gemini Evals",
+    "location": "Mountain View, California, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/7171455",
+    "score": 55
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "7572463",
+    "title": "Research Scientist, Audio",
+    "location": "New York City, New York, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/7572463",
+    "score": 55
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "7450900",
+    "title": "Research Scientist, Gemini Information Tasks",
+    "location": "New York City, New York, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/7450900",
+    "score": 55
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "7477025",
+    "title": "Research Scientist, Gemini Personal Intelligence",
+    "location": "Mountain View, California, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/7477025",
+    "score": 55
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "7421111",
+    "title": "Research Scientist, Gemini Safety",
+    "location": "Mountain View, California, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/7421111",
+    "score": 55
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "7312594",
+    "title": "Research Scientist, Generative Worlds",
+    "location": "New York City, New York, US; San Francisco, California, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/7312594",
+    "score": 55
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "7680885",
+    "title": "Research Scientist, Multimodal Alignment, Safety, and Fairness",
+    "location": "Kirkland, Washington, US; Mountain View, California, US; New York City, New York, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/7680885",
+    "score": 55
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "7461811",
+    "title": "Research Scientist, Recommendation Systems",
+    "location": "Mountain View, California, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/7461811",
+    "score": 55
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "7102795",
+    "title": "Research Scientist, Robotics",
+    "location": "Mountain View, California, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/7102795",
+    "score": 55
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "7576917",
+    "title": "Research Scientist, Safety and Alignment for Humanoid Robotics",
+    "location": "New York City, New York, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/7576917",
+    "score": 55
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "7572442",
+    "title": "Staff Research Engineer, AI Products - Mountain View",
+    "location": "Mountain View, California, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/7572442",
+    "score": 55
+  },
+  {
+    "company": "Runway",
+    "boardToken": "runwayml",
+    "id": "4483573005",
+    "title": "Director of Research Engineering, Datasets",
+    "location": "Remote",
+    "url": "https://job-boards.greenhouse.io/runwayml/jobs/4483573005",
+    "score": 55
+  },
+  {
+    "company": "Runway",
+    "boardToken": "runwayml",
+    "id": "4647571005",
+    "title": "Member of Technical Staff, Research Engineer",
+    "location": "Remote",
+    "url": "https://job-boards.greenhouse.io/runwayml/jobs/4647571005",
+    "score": 55
+  },
+  {
+    "company": "Runway",
+    "boardToken": "runwayml",
+    "id": "4483574005",
+    "title": "Member of Technical Staff, Research Engineer (Datasets)",
+    "location": "Remote",
+    "url": "https://job-boards.greenhouse.io/runwayml/jobs/4483574005",
+    "score": 55
+  },
+  {
+    "company": "Runway",
+    "boardToken": "runwayml",
+    "id": "4015515005",
+    "title": "Member of Technical Staff, Research Engineer (GPU Performance)",
+    "location": "Remote",
+    "url": "https://job-boards.greenhouse.io/runwayml/jobs/4015515005",
+    "score": 55
+  },
+  {
+    "company": "Databricks",
+    "boardToken": "databricks",
+    "id": "6322654002",
+    "title": "Sr. Product Manager, Data Engineering",
+    "location": "San Francisco, California",
+    "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6322654002",
+    "score": 55
+  },
+  {
+    "company": "Nuro",
+    "boardToken": "nuro",
+    "id": "6283499",
+    "title": "Lead ML Research Scientist",
+    "location": "Mountain View, California (HQ)",
+    "url": "https://nuro.ai/careersitem?gh_jid=6283499",
+    "score": 55
+  },
+  {
+    "company": "Nuro",
+    "boardToken": "nuro",
+    "id": "5434059",
+    "title": "Machine Learning Research Scientist, Behavior Planning and Prediction ",
+    "location": "Mountain View, California (HQ)",
+    "url": "https://nuro.ai/careersitem?gh_jid=5434059",
+    "score": 55
+  },
+  {
+    "company": "Nuro",
+    "boardToken": "nuro",
+    "id": "5416913",
+    "title": "Machine Learning Research Scientist: Generative Modeling for Planning",
+    "location": "Mountain View, California (HQ)",
+    "url": "https://nuro.ai/careersitem?gh_jid=5416913",
+    "score": 55
+  },
+  {
+    "company": "Nuro",
+    "boardToken": "nuro",
+    "id": "7439020",
+    "title": "ML Research Scientist, Prediction & Smart Agents",
+    "location": "Mountain View, California (HQ)",
+    "url": "https://nuro.ai/careersitem?gh_jid=7439020",
+    "score": 55
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7467839",
+    "title": "Applied Research Scientist, 3D Object Detection  (PhD New Grad)",
+    "location": "Mountain View, CA USA;  San Francisco, CA USA;",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7467839",
+    "score": 55
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7488508",
+    "title": "Applied Research Scientist, Perception LLM/VLM (PhD, New Grad)",
+    "location": "Mountain View, CA USA;  San Francisco, CA USA;",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7488508",
+    "score": 55
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7584859",
+    "title": "Research Scientist / Computer Vision Researcher, Map Scalability",
+    "location": "Mountain View, CA, US; San Francisco, CA, US; New York, NY, US",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7584859",
+    "score": 55
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7309064",
+    "title": "Research Scientist, Prediction & Planning ",
+    "location": "Mountain View, CA USA; New York, NY USA; San Francisco, CA USA;",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7309064",
+    "score": 55
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7469425",
+    "title": "Research Scientist, RL for Autonomous Planning & World Modeling  ",
+    "location": "Mountain View, CA, USA; Remote US",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7469425",
+    "score": 55
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4649903005",
+    "title": "Staff Software Engineer, Data Platform",
+    "location": "San Francisco, CA; New York, NY",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4649903005",
+    "score": 50
+  },
+  {
+    "company": "Runway",
+    "boardToken": "runwayml",
+    "id": "4650196005",
+    "title": "Member of Technical Staff, Research Tooling & Data Platform",
+    "location": "Remote",
+    "url": "https://job-boards.greenhouse.io/runwayml/jobs/4650196005",
+    "score": 50
+  },
+  {
+    "company": "Databricks",
+    "boardToken": "databricks",
+    "id": "7823561002",
+    "title": "Sr. Staff Software Engineer - Data Platform",
+    "location": "Mountain View, California; San Francisco, California",
+    "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7823561002",
+    "score": 50
+  },
+  {
+    "company": "Instacart",
+    "boardToken": "instacart",
+    "id": "7600232",
+    "title": "Staff Software Engineer, Data Platform",
+    "location": "United States - Remote",
+    "url": "https://instacart.careers/job/?gh_jid=7600232",
+    "score": 50
+  },
+  {
+    "company": "Coinbase",
+    "boardToken": "coinbase",
+    "id": "7576130",
+    "title": "Senior Engineering Manager - Data Platform",
+    "location": "Remote - USA",
+    "url": "https://www.coinbase.com/careers/positions/7576130?gh_jid=7576130",
+    "score": 50
+  },
+  {
+    "company": "Coinbase",
+    "boardToken": "coinbase",
+    "id": "7711287",
+    "title": "Senior Staff Software Engineer, Data Platform",
+    "location": "Remote - USA",
+    "url": "https://www.coinbase.com/careers/positions/7711287?gh_jid=7711287",
+    "score": 50
+  },
+  {
+    "company": "Nuro",
+    "boardToken": "nuro",
+    "id": "5550736",
+    "title": "Senior/Staff Software Engineer, Data Platform",
+    "location": "Mountain View, California (HQ)",
+    "url": "https://nuro.ai/careersitem?gh_jid=5550736",
+    "score": 50
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4488520005",
+    "title": "Staff Machine Learning Research Scientist/ Engineer, Agents",
+    "location": "San Francisco, CA; Seattle, WA; New York, NY",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4488520005",
+    "score": 45
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4628044005",
+    "title": "Staff Machine Learning Research Scientist, LLM Evals",
+    "location": "San Francisco, CA; Seattle, WA; New York, NY",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4628044005",
+    "score": 45
+  },
+  {
+    "company": "Runway",
+    "boardToken": "runwayml",
+    "id": "4015522005",
+    "title": "Member of Technical Staff, Applied Research Scientist",
+    "location": "Remote",
+    "url": "https://job-boards.greenhouse.io/runwayml/jobs/4015522005",
+    "score": 45
+  },
+  {
+    "company": "Databricks",
+    "boardToken": "databricks",
+    "id": "7434541002",
+    "title": "Staff GenAI Research Scientist",
+    "location": "New York City, New York",
+    "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7434541002",
+    "score": 45
+  },
+  {
+    "company": "Databricks",
+    "boardToken": "databricks",
+    "id": "7434532002",
+    "title": "Staff GenAI Research Scientist",
+    "location": "San Francisco, California",
+    "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7434532002",
+    "score": 45
+  },
+  {
+    "company": "Discord",
+    "boardToken": "discord",
+    "id": "8397385002",
+    "title": "Engineering Manager, Data Platform",
+    "location": "San Francisco Bay Area",
+    "url": "https://job-boards.greenhouse.io/discord/jobs/8397385002",
+    "score": 45
+  },
+  {
+    "company": "Nuro",
+    "boardToken": "nuro",
+    "id": "6121565",
+    "title": "Senior/Staff Machine Learning Research Scientist: Generative Modeling for Planning",
+    "location": "Mountain View, California (HQ)",
+    "url": "https://nuro.ai/careersitem?gh_jid=6121565",
+    "score": 45
+  },
+  {
+    "company": "Nuro",
+    "boardToken": "nuro",
+    "id": "6376021",
+    "title": "Staff ML Research Scientist",
+    "location": "Mountain View, California (HQ)",
+    "url": "https://nuro.ai/careersitem?gh_jid=6376021",
+    "score": 45
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4631811005",
+    "title": "Manager, Machine Learning Research Scientist, GenAI",
+    "location": "San Francisco, CA; Seattle, WA; New York, NY",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4631811005",
+    "score": 40
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4304790005",
+    "title": "Tech Lead/Manager, Machine Learning Research Scientist- LLM Evals",
+    "location": "San Francisco, CA; Seattle, WA; New York, NY",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4304790005",
+    "score": 40
+  },
+  {
+    "company": "Databricks",
+    "boardToken": "databricks",
+    "id": "7011263002",
+    "title": "PhD GenAI Research Scientist Intern",
+    "location": "San Francisco, California",
+    "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7011263002",
+    "score": 35
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "7589386",
+    "title": "Senior ML Software Engineer, GeminiApp Strategic User Segments ",
+    "location": "Mountain View, California, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/7589386",
+    "score": 5
+  },
+  {
+    "company": "Discord",
+    "boardToken": "discord",
+    "id": "8438033002",
+    "title": "Senior Software Engineer, Machine Learning (Commerce)",
+    "location": "San Francisco Bay Area",
+    "url": "https://job-boards.greenhouse.io/discord/jobs/8438033002",
+    "score": 5
+  },
+  {
+    "company": "Lyft",
+    "boardToken": "lyft",
+    "id": "8430589002",
+    "title": "Senior ML Software Engineer",
+    "location": "Seattle, WA",
+    "url": "https://app.careerpuck.com/job-board/lyft/job/8430589002?gh_jid=8430589002",
+    "score": 5
+  },
+  {
+    "company": "Lyft",
+    "boardToken": "lyft",
+    "id": "8430550002",
+    "title": "Senior ML Software Engineer",
+    "location": "San Francisco, CA",
+    "url": "https://app.careerpuck.com/job-board/lyft/job/8430550002?gh_jid=8430550002",
+    "score": 5
+  },
+  {
+    "company": "Lyft",
+    "boardToken": "lyft",
+    "id": "8421650002",
+    "title": "Senior ML Software Engineer, Mapping",
+    "location": "San Francisco, CA",
+    "url": "https://app.careerpuck.com/job-board/lyft/job/8421650002?gh_jid=8421650002",
+    "score": 5
+  },
+  {
+    "company": "Lyft",
+    "boardToken": "lyft",
+    "id": "8430552002",
+    "title": "Senior ML Software Engineer, Recommendations",
+    "location": "San Francisco, CA",
+    "url": "https://app.careerpuck.com/job-board/lyft/job/8430552002?gh_jid=8430552002",
+    "score": 5
+  },
+  {
+    "company": "Coinbase",
+    "boardToken": "coinbase",
+    "id": "7604203",
+    "title": "Senior Machine Learning Platform Engineer (Platform)",
+    "location": "Remote - USA",
+    "url": "https://www.coinbase.com/careers/positions/7604203?gh_jid=7604203",
+    "score": 5
+  },
+  {
+    "company": "Nuro",
+    "boardToken": "nuro",
+    "id": "6824589",
+    "title": "Senior Software Engineer, Machine Learning, 3D Reconstruction",
+    "location": "Mountain View, California (HQ)",
+    "url": "https://nuro.ai/careersitem?gh_jid=6824589",
+    "score": 5
+  },
+  {
+    "company": "Nuro",
+    "boardToken": "nuro",
+    "id": "6849645",
+    "title": "Senior Software Engineer, Machine Learning, Calibration ",
+    "location": "Mountain View, California (HQ)",
+    "url": "https://nuro.ai/careersitem?gh_jid=6849645",
+    "score": 5
+  },
+  {
+    "company": "Nuro",
+    "boardToken": "nuro",
+    "id": "6623715",
+    "title": "Senior Software Engineer, Machine Learning, Sensor Simulation",
+    "location": "Mountain View, California (HQ)",
+    "url": "https://nuro.ai/careersitem?gh_jid=6623715",
+    "score": 5
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "6615593",
+    "title": "Senior Machine Learning Infrastructure Engineer, Simulation",
+    "location": "Mountain View, CA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=6615593",
+    "score": 5
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7508897",
+    "title": "Senior ML Accelerator Modeling Engineer",
+    "location": "Mountain View, CA, USA; New York, NY, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7508897",
+    "score": 5
+  },
+  {
+    "company": "Point72",
+    "boardToken": "point72",
+    "id": "8399360002",
+    "title": "GenAI Security Engineer",
+    "location": "New York, NY",
+    "url": "https://boards.greenhouse.io/point72/jobs/8399360002?gh_jid=8399360002",
+    "score": 0
+  },
+  {
+    "company": "Point72",
+    "boardToken": "point72",
+    "id": "8018850002",
+    "title": "NLP Engineer",
+    "location": "New York",
+    "url": "https://boards.greenhouse.io/point72/jobs/8018850002?gh_jid=8018850002",
+    "score": 0
+  },
+  {
+    "company": "Point72",
+    "boardToken": "point72",
+    "id": "7825077002",
+    "title": "NLP Engineer",
+    "location": "New York",
+    "url": "https://boards.greenhouse.io/point72/jobs/7825077002?gh_jid=7825077002",
+    "score": 0
+  },
+  {
+    "company": "Point72",
+    "boardToken": "point72",
+    "id": "8023550002",
+    "title": "Quantitative Researcher - Machine Learning",
+    "location": "New York, London, or Hong Kong",
+    "url": "https://boards.greenhouse.io/point72/jobs/8023550002?gh_jid=8023550002",
+    "score": 0
+  },
+  {
+    "company": "Point72",
+    "boardToken": "point72",
+    "id": "7297513002",
+    "title": "Quantitative Researcher - Machine Learning ",
+    "location": "New York",
+    "url": "https://boards.greenhouse.io/point72/jobs/7297513002?gh_jid=7297513002",
+    "score": 0
+  },
+  {
+    "company": "DRW",
+    "boardToken": "drweng",
+    "id": "7544086",
+    "title": "Quantitative Researcher - Machine Learning",
+    "location": "New York",
+    "url": "https://job-boards.greenhouse.io/drweng/jobs/7544086",
+    "score": 0
+  },
+  {
+    "company": "IMC Trading",
+    "boardToken": "imc",
+    "id": "4699252101",
+    "title": "Machine Learning Researcher",
+    "location": "Chicago, United States; New York, United States",
+    "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4699252101",
+    "score": 0
+  },
+  {
+    "company": "IMC Trading",
+    "boardToken": "imc",
+    "id": "4573906101",
+    "title": "Machine Learning Research Lead",
+    "location": "Chicago, United States; New York, United States",
+    "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4573906101",
+    "score": 0
+  },
+  {
+    "company": "Jane Street",
+    "boardToken": "janestreet",
+    "id": "8229056002",
+    "title": "Campus Recruiter, Machine Learning and Quantitative Research",
+    "location": "New York, New York, United States",
+    "url": "https://job-boards.greenhouse.io/janestreet/jobs/8229056002",
+    "score": 0
+  },
+  {
+    "company": "Jane Street",
+    "boardToken": "janestreet",
+    "id": "8056588002",
+    "title": "Machine Learning Educator",
+    "location": "New York, New York, United States",
+    "url": "https://job-boards.greenhouse.io/janestreet/jobs/8056588002",
+    "score": 0
+  },
+  {
+    "company": "Jane Street",
+    "boardToken": "janestreet",
+    "id": "7449077002",
+    "title": "Machine Learning Performance Engineer",
+    "location": "New York, New York, United States",
+    "url": "https://job-boards.greenhouse.io/janestreet/jobs/7449077002",
+    "score": 0
+  },
+  {
+    "company": "Jane Street",
+    "boardToken": "janestreet",
+    "id": "7449190002",
+    "title": "Machine Learning Performance Engineer",
+    "location": "New York, New York, United States",
+    "url": "https://job-boards.greenhouse.io/janestreet/jobs/7449190002",
+    "score": 0
+  },
+  {
+    "company": "Jane Street",
+    "boardToken": "janestreet",
+    "id": "8069434002",
+    "title": "Machine Learning Researcher",
+    "location": "New York, New York, United States",
+    "url": "https://job-boards.greenhouse.io/janestreet/jobs/8069434002",
+    "score": 0
+  },
+  {
+    "company": "Jane Street",
+    "boardToken": "janestreet",
+    "id": "8060848002",
+    "title": "Machine Learning Researcher",
+    "location": "New York, New York, United States",
+    "url": "https://job-boards.greenhouse.io/janestreet/jobs/8060848002",
+    "score": 0
+  },
+  {
+    "company": "Jane Street",
+    "boardToken": "janestreet",
+    "id": "4276720002",
+    "title": "Machine Learning Researcher",
+    "location": "New York, New York, United States",
+    "url": "https://job-boards.greenhouse.io/janestreet/jobs/4276720002",
+    "score": 0
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "4952079008",
+    "title": "Machine Learning Systems Engineer, Research Tools",
+    "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/4952079008",
+    "score": 0
+  },
+  {
+    "company": "Anthropic",
+    "boardToken": "anthropic",
+    "id": "4952051008",
+    "title": "Machine Learning Systems Engineer, RL Engineering",
+    "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+    "url": "https://job-boards.greenhouse.io/anthropic/jobs/4952051008",
+    "score": 0
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4660340005",
+    "title": "Machine Learning Fellow - Human Frontier Collective (US)",
+    "location": "United States",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4660340005",
+    "score": 0
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4663053005",
+    "title": "ML Systems Engineer, Robotics",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4663053005",
+    "score": 0
+  },
+  {
+    "company": "DeepMind",
+    "boardToken": "deepmind",
+    "id": "7559215",
+    "title": "ML Performance Optimization Software Engineer",
+    "location": "New York City, New York, US",
+    "url": "https://job-boards.greenhouse.io/deepmind/jobs/7559215",
+    "score": 0
+  },
+  {
+    "company": "Databricks",
+    "boardToken": "databricks",
+    "id": "8029119002",
+    "title": "Sr. Technical Writer, AI & Machine Learning",
+    "location": "Seattle, Washington",
+    "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8029119002",
+    "score": 0
+  },
+  {
+    "company": "Databricks",
+    "boardToken": "databricks",
+    "id": "8027593002",
+    "title": "Sr. Technical Writer, AI & Machine Learning",
+    "location": "San Francisco, California",
+    "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8027593002",
+    "score": 0
+  },
+  {
+    "company": "Stripe",
+    "boardToken": "stripe",
+    "id": "7528260",
+    "title": "Software Engineer, Machine Learning Infrastructure",
+    "location": "Seattle, SF",
+    "url": "https://stripe.com/jobs/search?gh_jid=7528260",
+    "score": 0
+  },
+  {
+    "company": "Figma",
+    "boardToken": "figma",
+    "id": "5551532004",
+    "title": "Software Engineer, Machine Learning",
+    "location": "San Francisco, CA • New York, NY • United States",
+    "url": "https://boards.greenhouse.io/figma/jobs/5551532004?gh_jid=5551532004",
+    "score": 0
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "7268767",
+    "title": "Master's Machine Learning Internship Summer Term 2026 (Toronto)",
+    "location": "Toronto, ON, CA",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7268767",
+    "score": 0
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "7211004",
+    "title": "PhD Machine Learning Internship 2026 (USA) ",
+    "location": "San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US; New York, NY, US",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7211004",
+    "score": 0
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "7642249",
+    "title": "Sr. ML Ops Engineer, tvScientific",
+    "location": "San Francisco, CA, US; Remote, US",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7642249",
+    "score": 0
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7435887",
+    "title": "GenAI Engineer",
+    "location": "Mountain View CA USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7435887",
+    "score": 0
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7163224",
+    "title": "Software Engineer, Applied Machine Learning, Planner Technology",
+    "location": "Mountain View, California",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7163224",
+    "score": 0
+  },
+  {
+    "company": "Airbnb",
+    "boardToken": "airbnb",
+    "id": "7463421",
+    "title": "Staff GenAI System Engineer, Automation Foundation",
+    "location": "Remote - USA",
+    "url": "https://careers.airbnb.com/positions/7463421?gh_jid=7463421",
+    "score": -10
+  },
+  {
+    "company": "Nuro",
+    "boardToken": "nuro",
+    "id": "6621871",
+    "title": "Senior/Staff Engineer, Machine Learning - Online Mapping",
+    "location": "Mountain View, California (HQ)",
+    "url": "https://nuro.ai/careersitem?gh_jid=6621871",
+    "score": -10
+  },
+  {
+    "company": "Nuro",
+    "boardToken": "nuro",
+    "id": "7366259",
+    "title": "Senior/Staff ML Performance Engineer, Low-Precision Training & Model Quantization",
+    "location": "Mountain View, California (HQ)",
+    "url": "https://nuro.ai/careersitem?gh_jid=7366259",
+    "score": -10
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7438635",
+    "title": "Staff Machine Learning SWE Infra",
+    "location": "Mountain View, CA, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7438635",
+    "score": -10
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7170802",
+    "title": "Staff Software Engineer, Machine Learning, Planner Selection",
+    "location": "Mountain View, California, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7170802",
+    "score": -10
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7224992",
+    "title": "Staff Software Engineer, Machine Learning- Route and Pin Quality",
+    "location": "Mountain View, California, USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7224992",
+    "score": -10
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "7494658",
+    "title": "Engineering Manager II, Machine Learning – User Understanding",
+    "location": "San Francisco, CA, US; Remote, US",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7494658",
+    "score": -15
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "7528427",
+    "title": "Manager II, Machine Learning-Content Success",
+    "location": "San Francisco, CA, US; Remote, US",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7528427",
+    "score": -15
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "7239260",
+    "title": "Manager II, Machine Learning-Search",
+    "location": "San Francisco, CA, US; Remote, US",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7239260",
+    "score": -15
+  },
+  {
+    "company": "Point72",
+    "boardToken": "point72",
+    "id": "7302611002",
+    "title": "Machine Learning Researcher - Intern",
+    "location": "New York",
+    "url": "https://boards.greenhouse.io/point72/jobs/7302611002?gh_jid=7302611002",
+    "score": -20
+  },
+  {
+    "company": "Scale AI",
+    "boardToken": "scaleai",
+    "id": "4606060005",
+    "title": "Machine Learning Research Intern (Summer 2026)",
+    "location": "San Francisco, CA",
+    "url": "https://job-boards.greenhouse.io/scaleai/jobs/4606060005",
+    "score": -20
+  },
+  {
+    "company": "Instacart",
+    "boardToken": "instacart",
+    "id": "7532267",
+    "title": "Machine Learning PhD Intern, Economics",
+    "location": "United States - Remote",
+    "url": "https://instacart.careers/job/?gh_jid=7532267",
+    "score": -20
+  },
+  {
+    "company": "Pinterest",
+    "boardToken": "pinterest",
+    "id": "7268778",
+    "title": "Machine Learning Intern Fall 2026 (Toronto)",
+    "location": "Toronto, ON, CA",
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7268778",
+    "score": -20
+  },
+  {
+    "company": "Waymo",
+    "boardToken": "waymo",
+    "id": "7357493",
+    "title": "2026 Summer Intern, PhD, Machine Learning Research, Planning/Prediction",
+    "location": "Mountain View, CA USA",
+    "url": "https://careers.withwaymo.com/jobs?gh_jid=7357493",
+    "score": -20
+  },
+  {
+    "company": "Runway",
+    "boardToken": "runwayml",
+    "id": "4117243005",
+    "title": "Staff Product Manager, Machine Learning",
+    "location": "Remote",
+    "url": "https://job-boards.greenhouse.io/runwayml/jobs/4117243005",
+    "score": -25
+  }
+]

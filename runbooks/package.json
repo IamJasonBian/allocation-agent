@@ -14,6 +14,7 @@
     "check-status": "node scripts/check-status.mjs"
   },
   "dependencies": {
+    "@netlify/blobs": "^10.7.2",
     "ioredis": "^5.4.0",
     "pdfkit": "^0.17.2",
     "puppeteer-core": "^24.37.3"

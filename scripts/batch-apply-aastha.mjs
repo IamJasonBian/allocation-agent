@@ -18,12 +18,12 @@
 import { createServer } from "http";
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
-import puppeteer from "puppeteer-core";
-import { launchBrowser } from "./lib/browser-launcher.mjs";
+import puppeteer from "puppeteer-core"; // used by serveDashboard inline browser launch
 import { fileURLToPath } from "url";
-import { prepare as prepareApp, generateAutofillScript } from "./lib/apply-operator.mjs";
+import { prepare as prepareApp, generateAutofillScript } from "../services/allocation-crawler-service/src/engine/apply-operator.mjs";
+import { fillFormInBrowser } from "../services/allocation-crawler-service/src/engine/browser-fill.mjs";
+import { launchBrowser as launchBrowserEngine } from "../services/allocation-crawler-service/src/engine/browser-launcher.mjs";
 import { profile as aasthaProfile } from "./lib/candidate-profile-aastha.mjs";
-import { fillFormInBrowser } from "./lib/browser-fill.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
@@ -734,7 +734,7 @@ async function main() {
   if (autoApplyMode) {
     console.log(`\n-- Phase 3: Auto-apply scan — ${jobsToApply.length} jobs (browser: ${browserArg}) --\n`);
 
-    const browserCtx = await launchBrowser(browserArg);
+    const browserCtx = await launchBrowserEngine(browserArg);
     console.log(`  ${browserArg} launched\n`);
 
     const results = [];
@@ -1505,7 +1505,7 @@ renderFields();
           if (!app.ready || !app.payload) {
             return json(res, 400, { success: false, error: "preparation failed", queue });
           }
-          const { submitPayload } = await import("./lib/apply-operator.mjs");
+          const { submitPayload } = await import("../services/allocation-crawler-service/src/engine/apply-operator.mjs");
           const result = await submitPayload(job.board, job.job_id, app.embedUrl, app.payload);
           if (result.success) {
             job.status = "submitted";
@@ -1533,10 +1533,10 @@ renderFields();
 
           let result;
           if (app.formType === "react" && app.submitPath) {
-            const { submitReactPayload } = await import("./lib/apply-operator.mjs");
+            const { submitReactPayload } = await import("../services/allocation-crawler-service/src/engine/apply-operator.mjs");
             result = await submitReactPayload(app.submitPath, app.payload);
           } else if (app.formType === "legacy") {
-            const { submitPayload } = await import("./lib/apply-operator.mjs");
+            const { submitPayload } = await import("../services/allocation-crawler-service/src/engine/apply-operator.mjs");
             result = await submitPayload(job.board, job.job_id, app.embedUrl, app.payload);
           } else {
             return json(res, 400, { success: false, error: "Unknown form type: " + app.formType, queue });
@@ -1566,7 +1566,7 @@ renderFields();
 
           // Launch or reuse browser
           if (!serveDashboard._browserCtx || !serveDashboard._browserCtx.isConnected()) {
-            serveDashboard._browserCtx = await launchBrowser("chrome");
+            serveDashboard._browserCtx = await launchBrowserEngine("chrome");
             console.log("  [browser] Chrome launched");
           }
 

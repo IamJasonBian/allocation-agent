@@ -1,0 +1,19 @@
+{
+  "crawler_tags": ["analyst", "quant", "ml", "finance", "data", "junior"],
+  "greenhouse_boards": [
+    "coinbase", "deshaw", "aqr", "aquaticcapitalmanagement", "gravitonresearchcapital",
+    "togetherai", "databricks", "brex", "lithic", "figma", "dbtlabsinc",
+    "planetscale", "deepmind", "runwayml", "asana", "affirm", "marqeta",
+    "melio", "alloy", "datadog", "grafanalabs", "cockroachlabs", "anthropic",
+    "perplexity", "anyscale", "plaid", "mercury", "vercel", "temporaltechnologies",
+    "supabase", "scaleai", "janestreet", "towerresearchcapital",
+    "lincolninternational", "williamblair", "generalatlantic", "stepstone", "liontree"
+  ],
+  "ib_boards": [
+    { "token": "lincolninternational", "name": "Lincoln International" },
+    { "token": "williamblair", "name": "William Blair" },
+    { "token": "generalatlantic", "name": "General Atlantic" },
+    { "token": "stepstone", "name": "StepStone Group" },
+    { "token": "liontree", "name": "LionTree" }
+  ]
+}

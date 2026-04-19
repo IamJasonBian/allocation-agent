@@ -1,0 +1,25 @@
+{
+  "name": "allocation-agent-v1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IamJasonBian/allocation-agent.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/IamJasonBian/allocation-agent/issues"
+  },
+  "homepage": "https://github.com/IamJasonBian/allocation-agent#readme",
+  "dependencies": {
+    "openai": "^6.34.0",
+    "puppeteer-core": "^24.41.0"
+  }
+}

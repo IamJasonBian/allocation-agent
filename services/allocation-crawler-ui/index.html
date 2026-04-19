@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Allocation Crawler — Apply Console</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <h1>Allocation Crawler — Apply Console</h1>
+  <nav>
+    <button class="tab active" data-tab="failed">Failed runs</button>
+    <button class="tab" data-tab="profile">Candidate profile</button>
+    <button class="tab" data-tab="queue">Celery queue</button>
+  </nav>
+  <div class="config">
+    <label>Crawler API <input id="crawler-api" value="https://allocation-crawler-service.netlify.app/api/crawler" /></label>
+    <label>Worker bridge <input id="worker-api" value="http://localhost:8787" /></label>
+    <label>User ID <input id="user-id" value="aastha.aggarwal1@gmail.com" /></label>
+  </div>
+</header>
+
+<main>
+
+<section id="tab-failed" class="panel active">
+  <div class="toolbar">
+    <button id="reload-failed">Reload</button>
+    <label>Board <input id="filter-board" placeholder="e.g. williamblair" /></label>
+    <button id="requeue-all" class="danger">Requeue all failed</button>
+    <span id="failed-count" class="count"></span>
+  </div>
+  <table id="failed-table">
+    <thead><tr>
+      <th>Run</th><th>Job</th><th>Board</th><th>Error</th><th>Artifacts</th><th>Actions</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<section id="tab-profile" class="panel">
+  <form id="profile-form" class="grid">
+    <fieldset><legend>Contact</legend>
+      <label>First name <input name="firstName" /></label>
+      <label>Last name <input name="lastName" /></label>
+      <label>Email <input name="email" type="email" /></label>
+      <label>Phone <input name="phone" /></label>
+      <label>LinkedIn <input name="linkedIn" /></label>
+      <label>Location <input name="location" /></label>
+    </fieldset>
+    <fieldset><legend>Work authorization</legend>
+      <label>Authorized to work <select name="authorizedToWork"><option value="true">Yes</option><option value="false">No</option></select></label>
+      <label>Requires sponsorship <select name="requiresSponsorship"><option value="true">Yes</option><option value="false">No</option></select></label>
+      <label>Veteran <select name="veteranStatus"><option value="false">No</option><option value="true">Yes</option></select></label>
+    </fieldset>
+    <fieldset><legend>Education</legend>
+      <label>School <input name="school" /></label>
+      <label>Degree <input name="degree" /></label>
+      <label>Discipline <input name="discipline" /></label>
+      <label>GPA <input name="gpa" /></label>
+      <label>Start <input name="eduStart" placeholder="MM/YYYY" /></label>
+      <label>End <input name="eduEnd" placeholder="MM/YYYY" /></label>
+    </fieldset>
+    <fieldset><legend>Employment</legend>
+      <label>Employer <input name="employer" /></label>
+      <label>Job title <input name="jobTitle" /></label>
+      <label>Start <input name="empStart" placeholder="MM/YYYY" /></label>
+      <label>End <input name="empEnd" placeholder="MM/YYYY" /></label>
+    </fieldset>
+    <fieldset><legend>Demographics</legend>
+      <label>Gender <input name="gender" /></label>
+      <label>Race <input name="race" /></label>
+      <label>Sexual orientation <input name="sexualOrientation" /></label>
+      <label>Disability <input name="disability" /></label>
+      <label>Hispanic/Latino <input name="hispanicLatino" /></label>
+    </fieldset>
+    <fieldset><legend>Interest tags (comma-separated)</legend>
+      <label class="wide"><input name="tags" placeholder="analyst, quant, ml, finance" /></label>
+    </fieldset>
+    <div class="actions">
+      <button type="button" id="load-profile">Load from API</button>
+      <button type="submit">Save to /users</button>
+      <span id="profile-status"></span>
+    </div>
+  </form>
+</section>
+
+<section id="tab-queue" class="panel">
+  <div class="toolbar">
+    <button id="reload-queue">Reload</button>
+    <span id="queue-count" class="count"></span>
+  </div>
+  <table id="queue-table">
+    <thead><tr><th>Task ID</th><th>Kind</th><th>Run</th><th>State</th><th>Created</th><th>Result</th></tr></thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+</main>
+
+<dialog id="captcha-modal">
+  <form method="dialog">
+    <h3>Solve captcha / verification code</h3>
+    <p id="captcha-context"></p>
+    <label>Code <input id="captcha-code" autocomplete="one-time-code" /></label>
+    <menu>
+      <button value="cancel">Cancel</button>
+      <button id="captcha-submit" value="submit">Enqueue resume</button>
+    </menu>
+  </form>
+</dialog>
+
+<div id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -18,74 +18,33 @@ import { readFileSync, writeFileSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 import { resolveField, getSynonyms } from "./lib/field-resolver.mjs";
-import { profile as candidateProfile } from "./lib/candidate-profile-aastha.mjs";
+import { loadProfile } from "./lib/candidate-profile-loader.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 
-const CRAWLER_API = "https://allocation-crawler-service.netlify.app/api/crawler";
-const RESUME_PDF_PATH = resolve(ROOT, "blob/aastha_resume.pdf");
+const CRAWLER_API = process.env.CRAWLER_API || "https://allocation-crawler-service.netlify.app/api/crawler";
 
-// ── Aastha's Candidate Profile ──
-const candidate = {
-  firstName: "Aastha",
-  lastName: "Aggarwal",
-  email: "aastha.aggarwal1@gmail.com",
-  phone: "347-224-9624",
-  linkedIn: "https://www.linkedin.com/in/aastar",
-  location: "New York, NY",
-  authorizedToWork: false,
-  requiresSponsorship: true,
-  veteranStatus: false,
-  userId: "aastha.aggarwal1@gmail.com",
-  school: "Columbia University",
-  degree: "Master of Science",
-  discipline: "Applied Analytics",
-  gpa: "3.6",
-  graduationMonth: "May",
-  graduationYear: "2025",
-  gender: "Female",
-  race: "Asian",
-  sexualOrientation: "Straight",
-  disability: "No",
-  hispanicLatino: "No",
-  employer: "Ironhold Capital",
-  jobTitle: "Investment Analyst",
-  eduStartMonth: "09", eduStartYear: "2023",
-  eduEndMonth: "05", eduEndYear: "2025",
-  empStartMonth: "06", empStartYear: "2022",
-  empEndMonth: "08", empEndYear: "2023",
-  resumeText: `AASTHA AGGARWAL
-New York, NY | 347-224-9624 | aastha.aggarwal1@gmail.com | linkedin.com/in/aastar
+// Resolve the candidate at startup. `--user=<id>` (or USER_ID env var) picks
+// the profile; defaults to Aastha for backwards-compat with existing cron/
+// manual invocations.
+const USER_ID =
+  process.argv.find((a) => a.startsWith("--user="))?.split("=")[1] ||
+  process.env.USER_ID ||
+  "aastha.aggarwal1@gmail.com";
 
-EDUCATION
-Columbia University, M.S. Applied Analytics — GPA: 3.6
-Fordham University Gabelli School of Business, B.S. Global Business — GPA: 3.9
+const { profile: candidateProfile, candidate: loadedCandidate, resumePath } = await loadProfile({
+  userId: USER_ID,
+  crawlerApi: CRAWLER_API,
+});
 
-PROFESSIONAL EXPERIENCE
+const RESUME_PDF_PATH = resumePath || resolve(ROOT, "blob/aastha_resume.pdf");
 
-Ironhold Capital — Investment Analyst (Generalist)
-• Investment analysis across multiple sectors
-• Financial modeling and due diligence
-
-Vertex Partners — M&A Analyst Intern
-• M&A deal analysis and financial modeling
-• Cash flow projections and valuation
-
-Value Works LLC — Equity Trader
-• Equity research and trading
-• NAV techniques and DCF valuation
-
-Ecohaven Furniture — Market Research Analytics Intern
-• Market research and predictive analytics
-• Data-driven insights using Python and Tableau
-
-TECHNICAL SKILLS
-Programming: Python, R, Java, SQL, Excel
-Analytics Tools: Tableau, PowerPoint, Alexa Analytics
-ML/Analytics: Supervised Learning, Unsupervised Learning, LLM, Predictive Analytics
-Finance: Equity Research, M&A, Financial Modeling, NAV Techniques, DCF Valuation`,
-};
+// The rest of this file references `candidate.<field>`. For Aastha the loader
+// delivers a fully-populated object from candidate-profile-aastha.mjs; for
+// any other user it's derived from their /users answers blob, with empty
+// fields falling through to the field-resolver's LLM layer.
+const candidate = loadedCandidate;
 
 // ── Question answering — uses 3-layer field resolver ──
 // See scripts/lib/field-resolver.mjs for the implementation.

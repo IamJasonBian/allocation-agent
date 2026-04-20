@@ -23,9 +23,10 @@ _AUTOFILL_RETRY = RetryPolicy(maximum_attempts=3,
 @workflow.defn
 class AutofillRetryWorkflow:
     @workflow.run
-    async def run(self, run_id: str, job_id: str, board: str, user_id: str) -> dict:
+    async def run(self, run_id: str, job_id: str, board: str,
+                  user_id: str, dry_run: bool = False) -> dict:
         result = await workflow.execute_activity(
-            autofill_activity, args=(job_id, board, user_id),
+            autofill_activity, args=(job_id, board, user_id, dry_run),
             start_to_close_timeout=_AUTOFILL_TIMEOUT,
             retry_policy=_AUTOFILL_RETRY,
         )
@@ -36,9 +37,9 @@ class AutofillRetryWorkflow:
 class SolveCaptchaWorkflow:
     @workflow.run
     async def run(self, run_id: str, job_id: str, board: str,
-                  user_id: str, code: str) -> dict:
+                  user_id: str, code: str, dry_run: bool = False) -> dict:
         result = await workflow.execute_activity(
-            captcha_activity, args=(job_id, board, user_id, code),
+            captcha_activity, args=(job_id, board, user_id, code, dry_run),
             start_to_close_timeout=_AUTOFILL_TIMEOUT,
             retry_policy=RetryPolicy(maximum_attempts=1),
         )
@@ -48,10 +49,12 @@ class SolveCaptchaWorkflow:
 @workflow.defn
 class RequeueFailedWorkflow:
     @workflow.run
-    async def run(self, runs: list[dict], user_id: str) -> dict:
+    async def run(self, runs: list[dict], user_id: str,
+                  dry_run: bool = False) -> dict:
         tasks = [
             workflow.execute_activity(
-                autofill_activity, args=(r["job_id"], r["board"], user_id),
+                autofill_activity,
+                args=(r["job_id"], r["board"], user_id, dry_run),
                 start_to_close_timeout=_AUTOFILL_TIMEOUT,
                 retry_policy=_AUTOFILL_RETRY,
             )

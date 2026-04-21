@@ -1,0 +1,21 @@
+[build]
+  command = "echo 'no build step'"
+  publish = "services/allocation-crawler-ui"
+  functions = "services/allocation-crawler-service/netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/api/crawler/users/:userId/history"
+  to = "/.netlify/functions/users-history"
+  status = 200
+  query = { id = ":userId" }
+  force = true
+
+[[redirects]]
+  from = "/api/crawler/users/:userId/candidates"
+  to = "/.netlify/functions/users-candidates"
+  status = 200
+  query = { id = ":userId" }
+  force = true

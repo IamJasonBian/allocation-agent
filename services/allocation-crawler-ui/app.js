@@ -65,7 +65,7 @@ function renderFailedRow(r) {
   const art = r.artifacts || {};
   const shots = (art.screenshot_keys || []).length;
   const needsCaptcha = /captcha|verification|security code|recaptcha/i.test(r.error || "");
-  return `<tr data-run="${r.run_id}" data-job="${r.job_id}" data-board="${r.board}">
+  return `<tr data-run="${r.run_id}" data-job="${r.job_id}" data-board="${r.board}" data-title="${escapeHtml(r.title || "")}">
     <td><code>${r.run_id}</code><br/><small>${new Date(r.started_at).toLocaleString()}</small></td>
     <td>${r.job_id}${art.notes ? `<br/><small>${art.notes}</small>` : ""}</td>
     <td>${r.board}</td>
@@ -74,6 +74,7 @@ function renderFailedRow(r) {
     <td class="actions">
       <button data-action="autofill">Retry autofill</button>
       <button data-action="captcha" class="${needsCaptcha ? "" : "secondary"}">Solve captcha</button>
+      <button data-action="callback" class="secondary" title="Record a callback so the CandidateJobs scorer weights similar roles higher">Mark callback</button>
     </td>
   </tr>`;
 }
@@ -81,10 +82,31 @@ function renderFailedRow(r) {
 function bindRowAction(btn) {
   btn.addEventListener("click", () => {
     const tr = btn.closest("tr");
-    const payload = { run_id: tr.dataset.run, job_id: tr.dataset.job, board: tr.dataset.board };
+    const payload = { run_id: tr.dataset.run, job_id: tr.dataset.job, board: tr.dataset.board, title: tr.dataset.title };
     if (btn.dataset.action === "autofill") enqueueAutofill(payload);
     else if (btn.dataset.action === "captcha") openCaptcha(payload);
+    else if (btn.dataset.action === "callback") markCallback(payload);
   });
+}
+
+async function markCallback(payload) {
+  const { crawler, userId } = cfg();
+  if (!userId) return toast("Set a user id first", "error");
+  try {
+    await j(`${crawler}/users/${encodeURIComponent(userId)}/history`, {
+      method: "POST",
+      body: JSON.stringify({
+        board: payload.board,
+        jobId: payload.job_id,
+        title: payload.title || "",
+        status: "callback",
+        source: "manual",
+      }),
+    });
+    toast("Callback recorded — future runs will weight similar roles higher");
+  } catch (e) {
+    toast(`Callback failed: ${e.message}`, "error");
+  }
 }
 
 async function enqueueAutofill(payload) {

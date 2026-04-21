@@ -20,6 +20,8 @@ import { loadProfile } from "./lib/candidate-profile.mjs";
 import { loadFilter, filterAndRank } from "./lib/job-matcher.mjs";
 import { applyToJob, findChromePath } from "./lib/greenhouse-driver.mjs";
 import { recordRun, saveResults } from "./lib/result-tracker.mjs";
+import { buildCandidateJobs } from "./lib/candidate-jobs-builder.mjs";
+import { confirmPrerun } from "./lib/prerun-confirm.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -42,35 +44,17 @@ function parseArgs() {
   };
 }
 
-// ── Job Fetching ──
-
-async function fetchJobsByTag(tag) {
+// Append a UserHistoryEntry so the CandidateJobs scorer sees this apply on
+// the next run. Non-fatal if the endpoint isn't reachable.
+async function recordHistory(userId, board, jobId, title, status, notes) {
   try {
-    const res = await fetch(`${CRAWLER_API}/jobs?status=discovered&tag=${tag}`, { signal: AbortSignal.timeout(30000) });
-    if (!res.ok) return [];
-    const data = await res.json();
-    return data.jobs || data || [];
-  } catch { return []; }
-}
-
-async function fetchGreenhouseBoard(token) {
-  try {
-    const res = await fetch(`https://boards-api.greenhouse.io/v1/boards/${token}/jobs`, {
-      headers: { Accept: "application/json" }, signal: AbortSignal.timeout(15000),
+    await fetch(`${CRAWLER_API}/users/${encodeURIComponent(userId)}/history`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ board, jobId: String(jobId), title, status, source: "manual", notes: notes || "" }),
+      signal: AbortSignal.timeout(10000),
     });
-    if (!res.ok) return [];
-    const data = await res.json();
-    return (data.jobs || []).map(j => ({
-      job_id: String(j.id),
-      board: token,
-      title: j.title,
-      url: j.absolute_url,
-      location: j.location?.name || "",
-      department: j.departments?.[0]?.name || "",
-      tags: [],
-      status: "discovered",
-    }));
-  } catch { return []; }
+  } catch {}
 }
 
 // ── Main ──
@@ -104,6 +88,7 @@ async function main() {
     if (result.success) {
       console.log(`  ✓ APPLIED: ${result.message || ""}`);
       await recordRun({ jobId: opts.jobId, board: opts.boardFilter, userId: profile.email });
+      await recordHistory(profile.email, opts.boardFilter, opts.jobId, "(single-job test)", "applied", null);
     } else {
       console.log(`  ✗ FAILED: ${result.error || "unknown"}`);
       await recordRun({ jobId: opts.jobId, board: opts.boardFilter, userId: profile.email, error: result.error });
@@ -111,41 +96,38 @@ async function main() {
     return;
   }
 
-  // Phase 1: Fetch jobs
-  console.log("── Phase 1: Fetching jobs ──\n");
-  const jobMap = new Map();
-
-  for (const tag of boardsConfig.crawler_tags) {
-    process.stdout.write(`  Tag: ${tag.padEnd(10)} `);
-    const jobs = await fetchJobsByTag(tag);
-    let added = 0;
-    for (const j of jobs) { if (!jobMap.has(j.job_id)) { jobMap.set(j.job_id, j); added++; } }
-    console.log(`${jobs.length} → ${added} new (${jobMap.size} total)`);
-  }
-
-  console.log("\n  Fetching IB Greenhouse boards...\n");
-  for (const { token, name } of boardsConfig.ib_boards) {
-    process.stdout.write(`  ${name.padEnd(25)} `);
-    const jobs = await fetchGreenhouseBoard(token);
-    let added = 0;
-    for (const j of jobs) { if (!jobMap.has(j.job_id)) { jobMap.set(j.job_id, j); added++; } }
-    console.log(`${jobs.length} total → ${added} new (${jobMap.size} total)`);
-    await new Promise(r => setTimeout(r, 300));
-  }
-
-  // Phase 2: Filter
-  const allJobs = Array.from(jobMap.values());
-  const matchingJobs = filterAndRank(allJobs, filter, {
-    boardFilter: opts.boardFilter,
-    allowedBoards: allowedBoards,
+  // Phase 1+2: Build CandidateJobs. The content-based scorer runs against
+  // this user's history; a random exploration seed is appended. The config
+  // filter + allowlist still participates via the pool fetch + `filter` hook
+  // so declarative job-filters/*.json rules keep working as a pre-filter.
+  console.log("── Phase 1+2: Building CandidateJobs ──\n");
+  const candidateJobs = await buildCandidateJobs({
+    userId: profile.email,
+    crawlerApi: CRAWLER_API,
+    limit: Number.isFinite(opts.limit) ? opts.limit : 20,
+    boardsAllowlist: allowedBoards,
+    filter: (j) => {
+      if (opts.boardFilter && j.board !== opts.boardFilter) return false;
+      // Pre-filter via the declared job-filter config so legacy rules still gate.
+      const ranked = filterAndRank([j], filter, { allowedBoards });
+      return ranked.length > 0;
+    },
   });
-  const jobsToApply = matchingJobs.slice(0, opts.limit);
 
-  console.log(`\n── Phase 2: ${jobsToApply.length} matching jobs ──\n`);
-  for (const j of jobsToApply.slice(0, 20)) {
-    console.log(`  ${String(j.score).padStart(4)}  ${j.board.padEnd(22)} ${j.title.substring(0, 55).padEnd(57)} ${(j.location || "").substring(0, 25)}`);
-  }
-  if (jobsToApply.length > 20) console.log(`  ... and ${jobsToApply.length - 20} more`);
+  const approved = await confirmPrerun(candidateJobs);
+  if (!approved) { console.log("\n  Prerun not confirmed. Exiting.\n"); return; }
+
+  const jobsToApply = candidateJobs.jobs.map((j) => ({
+    job_id: j.jobId,
+    board: j.board,
+    title: j.title,
+    url: j.url,
+    location: j.location,
+    department: j.department,
+    tags: j.tags,
+    score: j.score,
+    source: j.source,
+  }));
 
   if (opts.dryRun) { console.log("\n  DRY RUN complete.\n"); return; }
 
@@ -169,6 +151,7 @@ async function main() {
       console.log("✓ APPLIED");
       applied++;
       await recordRun({ jobId: job.job_id, board: job.board, userId: profile.email });
+      await recordHistory(profile.email, job.board, job.job_id, job.title, "applied", null);
     } else if (result.error?.includes("Security code")) {
       console.log("⚡ SEC CODE");
       secCode++;

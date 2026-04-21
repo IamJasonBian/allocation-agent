@@ -5,7 +5,8 @@
   "private": true,
   "description": "Crawler engine + Netlify functions for CandidateJobs and UserHistory",
   "scripts": {
-    "test": "node --test src/engine/__tests__ src/lib/__tests__ src/schemas/__tests__"
+    "test": "node --test src/engine/__tests__ src/lib/__tests__ src/schemas/__tests__",
+    "test:netlify-safety": "node --test netlify/functions/_shared/safety.test.mjs"
   },
   "dependencies": {
     "@netlify/functions": "^2.8.0",

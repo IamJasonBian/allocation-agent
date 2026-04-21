@@ -11,9 +11,18 @@
  * rebuild: the build lives in scripts/lib because it needs outbound fetches
  * to Greenhouse, which Netlify functions can do but we want to keep the
  * function surface thin.
+ *
+ * POST safety:
+ *   X-Dry-Run: 1 — validate body, 200 { dry_run, would_create, diff }; no write
+ *   Idempotency-Key — same body replays stored 2xx response for 24h; body mismatch → 409
  */
 
 import { getRedis, jsonResponse, readUserId } from "./_shared/redis.mjs";
+import {
+  executePostWithIdempotency,
+  getIdempotencyKey,
+  isDryRun,
+} from "./_shared/safety.mjs";
 import { validateCandidateJobs, makeCandidateJobs } from "../../src/schemas/candidate-jobs.mjs";
 
 const TTL_SECONDS = 7 * 24 * 60 * 60;
@@ -55,10 +64,47 @@ export default async (request) => {
     }
     const { ok, errors } = validateCandidateJobs(normalized);
     if (!ok) return jsonResponse(400, { error: "validation failed", details: errors });
-    const payload = JSON.stringify(normalized);
-    await redis.set(runKey(userId, normalized.runId), payload, "EX", TTL_SECONDS);
-    await redis.set(latestKey(userId), payload, "EX", TTL_SECONDS);
-    return jsonResponse(201, { userId, runId: normalized.runId, jobs: normalized.jobs.length });
+
+    if (isDryRun(request)) {
+      let previous = null;
+      const latestRaw = await redis.get(latestKey(userId));
+      try {
+        previous = latestRaw ? JSON.parse(latestRaw) : null;
+      } catch {
+        previous = null;
+      }
+      const identical =
+        previous && JSON.stringify(previous) === JSON.stringify(normalized);
+      return jsonResponse(200, {
+        dry_run: true,
+        would_create: !identical,
+        diff: {
+          identical: !!identical,
+          previous_run_id: previous?.runId ?? null,
+          next_run_id: normalized.runId,
+          previous_job_count: previous?.jobs?.length ?? null,
+          next_job_count: normalized.jobs.length,
+        },
+      });
+    }
+
+    const idem = getIdempotencyKey(request);
+    return executePostWithIdempotency({
+      redis,
+      scope: "candidates",
+      userId,
+      idempotencyKey: idem,
+      normalizedBody: normalized,
+      executeWrite: async () => {
+        const payload = JSON.stringify(normalized);
+        await redis.set(runKey(userId, normalized.runId), payload, "EX", TTL_SECONDS);
+        await redis.set(latestKey(userId), payload, "EX", TTL_SECONDS);
+        return {
+          status: 201,
+          body: { userId, runId: normalized.runId, jobs: normalized.jobs.length },
+        };
+      },
+    });
   }
 
   return jsonResponse(405, { error: "method not allowed" }, { Allow: "GET, POST" });

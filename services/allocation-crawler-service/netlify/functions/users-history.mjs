@@ -4,11 +4,20 @@
  *
  * Routed via redirects in netlify.toml — the :userId segment is propagated as
  * the `?id=` query param.
+ *
+ * POST safety:
+ *   X-Dry-Run: 1 — validate body, 200 { dry_run, would_create, diff }; no write
+ *   Idempotency-Key — same normalized entry replays stored 2xx for 24h; mismatch → 409
  */
 
 import { getRedis, jsonResponse, readUserId } from "./_shared/redis.mjs";
+import {
+  executePostWithIdempotency,
+  getIdempotencyKey,
+  isDryRun,
+} from "./_shared/safety.mjs";
 import { appendHistory, readHistory } from "../../src/lib/user-history-store.mjs";
-import { validateUserHistoryEntry } from "../../src/schemas/user-history.mjs";
+import { makeUserHistoryEntry, validateUserHistoryEntry } from "../../src/schemas/user-history.mjs";
 
 export default async (request) => {
   const userId = readUserId(request);
@@ -40,12 +49,55 @@ export default async (request) => {
     const candidate = { ...body, userId };
     const { ok, errors } = validateUserHistoryEntry(candidate);
     if (!ok) return jsonResponse(400, { error: "validation failed", details: errors });
+
+    let normalizedEntry;
     try {
-      const entry = await appendHistory(redis, userId, candidate);
-      return jsonResponse(201, { userId, entry });
+      normalizedEntry = makeUserHistoryEntry(candidate);
     } catch (err) {
-      return jsonResponse(500, { error: "append failed", detail: err?.message });
+      return jsonResponse(400, { error: "normalization failed", detail: err?.message });
     }
+
+    if (isDryRun(request)) {
+      const tail = await readHistory(redis, userId, { order: "desc", limit: 1 });
+      const previousLatest = tail[0] ?? null;
+      return jsonResponse(200, {
+        dry_run: true,
+        would_create: true,
+        diff: {
+          entry: {
+            board: normalizedEntry.board,
+            jobId: normalizedEntry.jobId,
+            status: normalizedEntry.status,
+            timestamp: normalizedEntry.timestamp,
+          },
+          previous_latest_entry: previousLatest
+            ? {
+                board: previousLatest.board,
+                jobId: previousLatest.jobId,
+                status: previousLatest.status,
+                timestamp: previousLatest.timestamp,
+              }
+            : null,
+        },
+      });
+    }
+
+    const idem = getIdempotencyKey(request);
+    return executePostWithIdempotency({
+      redis,
+      scope: "history",
+      userId,
+      idempotencyKey: idem,
+      normalizedBody: normalizedEntry,
+      executeWrite: async () => {
+        try {
+          const entry = await appendHistory(redis, userId, candidate);
+          return { status: 201, body: { userId, entry } };
+        } catch (err) {
+          return { status: 500, body: { error: "append failed", detail: err?.message } };
+        }
+      },
+    });
   }
 
   return jsonResponse(405, { error: "method not allowed" }, { Allow: "GET, POST" });

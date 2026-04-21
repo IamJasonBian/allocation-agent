@@ -19,6 +19,8 @@ import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 import { resolveField, getSynonyms } from "./lib/field-resolver.mjs";
 import { loadProfile } from "./lib/candidate-profile-loader.mjs";
+import { buildCandidateJobs } from "./lib/candidate-jobs-builder.mjs";
+import { confirmPrerun } from "./lib/prerun-confirm.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
@@ -67,119 +69,6 @@ async function getComboboxOptions(page, inputId) {
   await page.keyboard.press("Escape");
   await new Promise(r => setTimeout(r, 200));
   return opts;
-}
-
-// ── Job filtering (same logic as batch-apply-aastha.mjs) ──
-
-const TARGET_TITLE_PATTERNS = [
-  /\banalyst\b/i, /\banalytics\b/i, /\bdata\s*analyst/i, /\bbusiness\s*analyst/i,
-  /\bfinancial\s*analyst/i, /\brisk\s*analyst/i, /\bcredit\s*analyst/i,
-  /\bquantitative\s*analyst/i, /\bresearch\s*analyst/i, /\binvestment\s*analyst/i,
-  /\bdata\s*scientist/i, /\bapplied\s*scientist/i,
-  /\binvestment\s*banking/i, /\bm&a\b/i, /\bcapital\s*(advisory|markets)/i,
-  /\bprivate\s*(equity|capital|debt|wealth)/i, /\bequity\b.*\b(research|analyst|associate)/i,
-  /\bportfolio\b.*\b(analyst|associate|valuation|management)/i,
-  /\bfinance\b.*\b(analyst|associate)/i, /\bfp&a\b/i, /\bvaluation/i,
-  /\bfund\s*(accounting|operations)/i, /\btreasury/i, /\brestructuring/i,
-  /\bclient\s*relations/i, /\bsummer\s*analyst/i, /\bassociate\b/i,
-  /\bforecast/i, /\bpricing/i, /\bmodeling\b/i,
-];
-
-const EXCLUDE_TITLE_PATTERNS = [
-  /\bsoftware\s*engineer/i, /\bsre\b/i, /\bdevops\b/i, /\binfrastructure\b/i,
-  /\bfrontend\b/i, /\bbackend\b/i, /\bfull\s*stack/i, /\bplatform\s*engineer/i,
-  /\bsecurity\s*engineer/i, /\blegal\b/i, /\bcounsel\b/i, /\bdesign/i,
-  /\brecruiter\b/i, /\bpeople\s*ops/i, /\bhr\b/i, /\bcustomer\s*success/i,
-  /\bsales\s*(manager|director|lead|executive)\b/i, /\baccount\s*(manager|executive)/i,
-  /\bproduct\s*manager/i, /\bprogram\s*manager/i, /\bengineering\s*manager/i,
-  /\bvice\s*president\b/i, /\bhead\s+of\b/i, /\bsenior\s+manager/i,
-  /\bdirector\b(?!.*\b(analyst|associate))/i, /\bparalegal\b/i,
-  /\bexecutive\s*assistant/i, /\bdesktop\s*support/i, /\badministrative/i,
-  /\bworkday\b/i, /\bjira\b/i, /\bsalesforce\b/i, /\bsite\s*reliability/i,
-  /\bmarketing\b(?!.*\bintern)/i, /\bpayroll\s*specialist/i,
-];
-
-const VALID_LOCATIONS = [
-  /new\s*york/i, /nyc/i, /\bny\b/i, /san\s*francisco/i, /\bsf\b/i,
-  /remote/i, /united\s*states/i, /\bus\b/i, /\busa\b/i,
-  /chicago/i, /boston/i, /\bct\b/i, /greenwich/i, /stamford/i,
-  /charlotte/i, /atlanta/i, /anywhere/i, /hybrid/i, /flexible/i,
-];
-
-const GREENHOUSE_BOARDS = new Set([
-  "coinbase", "deshaw", "aqr", "aquaticcapitalmanagement", "gravitonresearchcapital",
-  "togetherai", "databricks", "brex", "lithic", "figma", "dbtlabsinc",
-  "planetscale", "deepmind", "runwayml", "asana", "affirm", "marqeta",
-  "melio", "alloy", "datadog", "grafanalabs", "cockroachlabs", "anthropic",
-  "perplexity", "anyscale", "plaid", "mercury", "vercel", "temporaltechnologies",
-  "supabase", "scaleai", "janestreet", "towerresearchcapital",
-  "lincolninternational", "williamblair", "generalatlantic", "stepstone", "liontree",
-]);
-
-function isTargetJob(title) {
-  if (EXCLUDE_TITLE_PATTERNS.some(p => p.test(title))) return false;
-  return TARGET_TITLE_PATTERNS.some(p => p.test(title));
-}
-function isUSLocation(loc) { return !loc || VALID_LOCATIONS.some(p => p.test(loc)); }
-
-function scorePriority(title, tags) {
-  const t = title.toLowerCase();
-  let score = 0;
-  if (/investment\s*banking\s*analyst/i.test(t)) score += 120;
-  if (/investment\s*banking\s*associate/i.test(t)) score += 115;
-  if (/investment\s*banking/i.test(t) && score === 0) score += 110;
-  if (/m&a\s*(analyst|associate)/i.test(t)) score += 115;
-  if (/m&a/i.test(t) && score === 0) score += 100;
-  if (/capital\s*advisory/i.test(t)) score += 100;
-  if (/private\s*equity\s*analyst/i.test(t)) score += 110;
-  if (/equity\s*research\s*(analyst|associate)/i.test(t)) score += 105;
-  if (/summer\s*analyst/i.test(t)) score += 100;
-  if (/valuation/i.test(t)) score += 95;
-  if (/data\s*analyst/i.test(t)) score += 100;
-  if (/financial\s*analyst/i.test(t)) score += 100;
-  if (/fp&a/i.test(t)) score += 95;
-  if (/data\s*scientist/i.test(t)) score += 95;
-  if (/risk\s*analyst/i.test(t)) score += 85;
-  if (/research\s*analyst/i.test(t)) score += 80;
-  if (/portfolio\s*(analyst|valuation)/i.test(t)) score += 80;
-  if (/restructuring/i.test(t)) score += 90;
-  if (/corporate\s*finance/i.test(t)) score += 85;
-  if (/fund\s*(accounting|operations)/i.test(t)) score += 70;
-  if (/treasury/i.test(t)) score += 70;
-  if (/\banalytics\b/i.test(t) && score === 0) score += 60;
-  if (/\banalyst\b/i.test(t) && score === 0) score += 50;
-  if (/\bassociate\b/i.test(t) && score === 0) score += 40;
-  if (tags?.includes("analyst")) score += 10;
-  if (tags?.includes("quant")) score += 10;
-  if (/\bintern\b/i.test(t)) score -= 30;
-  if (/\bstaff\b/i.test(t) || /\bprincipal\b/i.test(t)) score -= 15;
-  return score;
-}
-
-// ── Fetch jobs ──
-
-async function fetchJobsByTag(tag) {
-  try {
-    const res = await fetch(`${CRAWLER_API}/jobs?status=discovered&tag=${tag}`, { signal: AbortSignal.timeout(30000) });
-    if (!res.ok) return [];
-    const data = await res.json();
-    return data.jobs || data || [];
-  } catch { return []; }
-}
-
-async function fetchGreenhouseBoard(token) {
-  try {
-    const res = await fetch(`https://boards-api.greenhouse.io/v1/boards/${token}/jobs`, {
-      headers: { Accept: "application/json" }, signal: AbortSignal.timeout(15000),
-    });
-    if (!res.ok) return [];
-    const data = await res.json();
-    return (data.jobs || []).map(j => ({
-      job_id: String(j.id), board: token, title: j.title,
-      url: j.absolute_url, location: j.location?.name || "",
-      department: j.departments?.[0]?.name || "", tags: [], status: "discovered",
-    }));
-  } catch { return []; }
 }
 
 // ── Chrome path ──
@@ -807,6 +696,22 @@ async function recordRun(jobId, board, error) {
   } catch {}
 }
 
+// Append a UserHistoryEntry so the CandidateJobs builder sees this apply in
+// its signal on the next run. Safe to fail — the user-history surface is
+// separate from the legacy run log above.
+async function recordHistory(board, jobId, title, status, notes) {
+  try {
+    await fetch(`${CRAWLER_API}/users/${encodeURIComponent(candidate.userId)}/history`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        board, jobId: String(jobId), title, status, source: "manual", notes: notes || "",
+      }),
+      signal: AbortSignal.timeout(10000),
+    });
+  } catch {}
+}
+
 // ── Main ──
 
 async function main() {
@@ -833,6 +738,7 @@ async function main() {
     if (result.success) {
       console.log(`  ✓ APPLIED: ${result.message || ""}`);
       await recordRun(jobIdArg, boardFilter, null);
+      await recordHistory(boardFilter, jobIdArg, "(single-job test)", "applied", null);
     } else {
       console.log(`  ✗ FAILED: ${result.error || "unknown"}`);
       await recordRun(jobIdArg, boardFilter, result.error);
@@ -841,55 +747,32 @@ async function main() {
     return;
   }
 
-  // Phase 1: Fetch jobs
-  console.log("── Phase 1: Fetching jobs ──\n");
-  const jobMap = new Map();
+  // Phase 1+2: Build CandidateJobs from user history + pool, then gate on
+  // user confirmation. All regex title filtering + hardcoded scoring is gone —
+  // ranking is content-based against the user's apply/callback history with a
+  // single random exploration seed appended.
+  console.log("── Phase 1+2: Building CandidateJobs ──\n");
+  const candidateJobs = await buildCandidateJobs({
+    userId: USER_ID,
+    crawlerApi: CRAWLER_API,
+    limit: Number.isFinite(limit) ? limit : 20,
+    filter: boardFilter ? (j) => j.board === boardFilter : undefined,
+  });
 
-  for (const tag of ["analyst", "quant", "ml", "finance", "data", "junior"]) {
-    process.stdout.write(`  Tag: ${tag.padEnd(10)} `);
-    const jobs = await fetchJobsByTag(tag);
-    let added = 0;
-    for (const j of jobs) { if (!jobMap.has(j.job_id)) { jobMap.set(j.job_id, j); added++; } }
-    console.log(`${jobs.length} → ${added} new (${jobMap.size} total)`);
-  }
+  const approved = await confirmPrerun(candidateJobs);
+  if (!approved) { console.log("\n  Prerun not confirmed. Exiting.\n"); return; }
 
-  console.log("\n  Fetching IB Greenhouse boards...\n");
-  for (const { token, name } of [
-    { token: "lincolninternational", name: "Lincoln International" },
-    { token: "williamblair", name: "William Blair" },
-    { token: "generalatlantic", name: "General Atlantic" },
-    { token: "stepstone", name: "StepStone Group" },
-    { token: "liontree", name: "LionTree" },
-  ]) {
-    process.stdout.write(`  ${name.padEnd(25)} `);
-    const jobs = await fetchGreenhouseBoard(token);
-    let added = 0;
-    for (const j of jobs) { if (!jobMap.has(j.job_id)) { jobMap.set(j.job_id, j); added++; } }
-    console.log(`${jobs.length} total → ${added} new (${jobMap.size} total)`);
-    await new Promise(r => setTimeout(r, 300));
-  }
-
-  // Phase 2: Filter
-  const allJobs = Array.from(jobMap.values());
-  const matchingJobs = allJobs
-    .filter(j => {
-      if (boardFilter && j.board !== boardFilter) return false;
-      if (!GREENHOUSE_BOARDS.has(j.board)) return false;
-      if (!isTargetJob(j.title)) return false;
-      if (!isUSLocation(j.location)) return false;
-      return true;
-    })
-    .map(j => ({ ...j, score: scorePriority(j.title, j.tags) }))
-    .filter(j => j.score > 0)
-    .sort((a, b) => b.score - a.score);
-
-  const jobsToApply = matchingJobs.slice(0, limit);
-
-  console.log(`\n── Phase 2: ${jobsToApply.length} matching jobs ──\n`);
-  for (const j of jobsToApply.slice(0, 20)) {
-    console.log(`  ${String(j.score).padStart(4)}  ${j.board.padEnd(22)} ${j.title.substring(0, 55).padEnd(57)} ${(j.location || "").substring(0, 25)}`);
-  }
-  if (jobsToApply.length > 20) console.log(`  ... and ${jobsToApply.length - 20} more`);
+  const jobsToApply = candidateJobs.jobs.map((j) => ({
+    job_id: j.jobId,
+    board: j.board,
+    title: j.title,
+    url: j.url,
+    location: j.location,
+    department: j.department,
+    tags: j.tags,
+    score: j.score,
+    source: j.source,
+  }));
 
   if (dryRun) { console.log("\n  DRY RUN complete.\n"); return; }
 
@@ -910,6 +793,7 @@ async function main() {
       console.log("✓ APPLIED");
       applied++;
       await recordRun(job.job_id, job.board, null);
+      await recordHistory(job.board, job.job_id, job.title, "applied", null);
     } else if (result.error?.includes("Security code")) {
       console.log("⚡ SEC CODE");
       secCode++;

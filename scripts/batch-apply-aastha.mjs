@@ -24,6 +24,8 @@ import { prepare as prepareApp, generateAutofillScript } from "../services/alloc
 import { fillFormInBrowser } from "../services/allocation-crawler-service/src/engine/browser-fill.mjs";
 import { launchBrowser as launchBrowserEngine } from "../services/allocation-crawler-service/src/engine/browser-launcher.mjs";
 import { profile as aasthaProfile } from "./lib/candidate-profile-aastha.mjs";
+import { buildCandidateJobs } from "./lib/candidate-jobs-builder.mjs";
+import { confirmPrerun } from "./lib/prerun-confirm.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
@@ -499,6 +501,18 @@ async function recordRun(jobId, board, status, error) {
   }
 }
 
+// UserHistory append — signals the CandidateJobs scorer about this apply.
+async function recordHistory(board, jobId, title, status, notes) {
+  try {
+    await fetch(`${CRAWLER_API}/users/${encodeURIComponent(candidate.userId)}/history`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ board, jobId: String(jobId), title, status, source: "manual", notes: notes || "" }),
+      signal: AbortSignal.timeout(10000),
+    });
+  } catch {}
+}
+
 // ── Main ──
 
 async function main() {
@@ -537,92 +551,39 @@ async function main() {
     "lincolninternational", "williamblair", "generalatlantic", "stepstone", "liontree",
   ]);
 
-  // Phase 1: Fetch jobs from crawler API by Aastha's tags + direct from IB boards
-  console.log("── Phase 1: Fetching jobs from crawler API ──\n");
-  const tags = ["analyst", "quant", "ml", "finance", "data", "junior"];
-  const jobMap = new Map(); // deduplicate by job_id
-
-  for (const tag of tags) {
-    process.stdout.write(`  Tag: ${tag.padEnd(10)} `);
-    const jobs = await fetchJobsByTag(tag);
-    let added = 0;
-    for (const j of jobs) {
-      if (!jobMap.has(j.job_id)) {
-        jobMap.set(j.job_id, j);
-        added++;
-      }
-    }
-    console.log(`${jobs.length} jobs → ${added} new (${jobMap.size} total)`);
-  }
-
-  // Also fetch directly from IB Greenhouse boards (in case crawl hasn't ingested yet)
-  console.log("\n  Fetching directly from IB Greenhouse boards...\n");
-  const IB_BOARDS = [
-    { token: "lincolninternational", name: "Lincoln International" },
-    { token: "williamblair", name: "William Blair" },
-    { token: "generalatlantic", name: "General Atlantic" },
-    { token: "stepstone", name: "StepStone Group" },
-    { token: "liontree", name: "LionTree" },
-  ];
-
-  for (const board of IB_BOARDS) {
-    process.stdout.write(`  ${board.name.padEnd(25)} `);
-    try {
-      const res = await fetch(
-        `https://boards-api.greenhouse.io/v1/boards/${board.token}/jobs`,
-        { headers: { Accept: "application/json" }, signal: AbortSignal.timeout(15000) }
-      );
-      if (!res.ok) { console.log("(no board)"); continue; }
-      const data = await res.json();
-      const jobs = data.jobs || [];
-      let added = 0;
-      for (const j of jobs) {
-        const jobId = String(j.id);
-        if (!jobMap.has(jobId)) {
-          jobMap.set(jobId, {
-            job_id: jobId,
-            board: board.token,
-            title: j.title,
-            url: j.absolute_url,
-            location: j.location?.name || "",
-            department: j.departments?.[0]?.name || "",
-            tags: [],
-            status: "discovered",
-          });
-          added++;
-        }
-      }
-      console.log(`${jobs.length} total → ${added} new (${jobMap.size} total)`);
-    } catch {
-      console.log("(error)");
-    }
-    await new Promise(r => setTimeout(r, 300));
-  }
-
-  // Phase 2: Filter for Aastha's profile
-  console.log("\n── Phase 2: Filtering for matching roles ──\n");
-
-  const allJobs = Array.from(jobMap.values());
-  const matchingJobs = allJobs
-    .filter(j => {
+  // Phase 1+2: Build CandidateJobs (content-based from user history + one
+  // random exploration seed), then gate on user confirmation. The old inline
+  // regex filter and scorer are unused on this path — they stay in the file
+  // only because --detect-captcha and --dashboard still reference some of the
+  // helpers.
+  console.log("── Phase 1+2: Building CandidateJobs ──\n");
+  const candidateJobs = await buildCandidateJobs({
+    userId: candidate.userId,
+    crawlerApi: CRAWLER_API,
+    limit: Number.isFinite(limit) ? limit : 20,
+    filter: (j) => {
       if (boardFilter && j.board !== boardFilter) return false;
-      if (!GREENHOUSE_BOARDS.has(j.board)) return false; // can only apply to Greenhouse
-      if (!isTargetJob(j.title)) return false;
+      if (!GREENHOUSE_BOARDS.has(j.board)) return false;
       if (!isUSLocation(j.location)) return false;
       return true;
-    })
-    .map(j => ({
-      ...j,
-      score: scorePriority(j.title, j.tags),
-    }))
-    .filter(j => j.score > 0)
-    .sort((a, b) => b.score - a.score);
+    },
+  });
 
-  const jobsToApply = matchingJobs.slice(0, limit);
+  const approved = await confirmPrerun(candidateJobs);
+  if (!approved) { console.log("\n  Prerun not confirmed. Exiting.\n"); return; }
 
-  console.log(`  Total crawled: ${allJobs.length}`);
-  console.log(`  Greenhouse + US location: ${allJobs.filter(j => GREENHOUSE_BOARDS.has(j.board) && isUSLocation(j.location)).length}`);
-  console.log(`  Title match: ${matchingJobs.length}`);
+  const jobsToApply = candidateJobs.jobs.map((j) => ({
+    job_id: j.jobId,
+    board: j.board,
+    title: j.title,
+    url: j.url,
+    location: j.location,
+    department: j.department,
+    tags: j.tags,
+    score: j.score,
+    source: j.source,
+  }));
+
   console.log(`  Applying to: ${jobsToApply.length}`);
   console.log("");
 
@@ -848,6 +809,7 @@ async function main() {
       console.log(`[ok] APPLIED`);
       applied++;
       await recordRun(job.job_id, job.board, "submitted", null);
+      await recordHistory(job.board, job.job_id, job.title, "applied", null);
     } else {
       if (result.error?.includes("reCAPTCHA")) {
         console.log(`[--] CAPTCHA`);

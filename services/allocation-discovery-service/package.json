@@ -1,0 +1,12 @@
+{
+  "name": "@allocation/discovery-service",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "Job discovery crawler — multi-ATS sources, per-host queue politeness, quality scoring, dead-link detection",
+  "scripts": {
+    "discover": "node scripts/discover.mjs",
+    "test": "node --test src/**/*.test.mjs"
+  },
+  "dependencies": {}
+}

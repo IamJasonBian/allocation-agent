@@ -10,7 +10,7 @@ from __future__ import annotations
 import asyncio
 from datetime import timedelta
 
-from mock_temporal import RetryPolicy, workflow
+from allocation_agent_workflow import RetryPolicy, workflow
 from workflows.activities import autofill_activity, captcha_activity
 
 TASK_QUEUE = "apply-recovery"

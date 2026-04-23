@@ -10,7 +10,7 @@ import asyncio
 import os
 from pathlib import Path
 
-from mock_temporal import activity
+from allocation_agent_workflow import activity
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 APPLY_SCRIPT = REPO_ROOT / "scripts" / "batch-browser-apply-aastha.mjs"

@@ -27,9 +27,18 @@ import re
 import sys
 from pathlib import Path
 
-from mock_temporal import Client, Interceptor, Worker
-from workflows.activities import autofill_activity, captcha_activity
-from workflows.apply_recovery import (
+# Dev fallback: let `python worker_mock.py` work without needing
+# `pip install -e ../allocation-agent-workflow-service` first.
+_WORKFLOW_PKG = (
+    Path(__file__).resolve().parents[1] / "allocation-agent-workflow-service"
+)
+if _WORKFLOW_PKG.is_dir() and str(_WORKFLOW_PKG) not in sys.path:
+    sys.path.insert(0, str(_WORKFLOW_PKG))
+
+from allocation_agent_workflow import Client, LogFailureInterceptor, Worker  # noqa: E402
+
+from workflows.activities import autofill_activity, captcha_activity  # noqa: E402
+from workflows.apply_recovery import (  # noqa: E402
     TASK_QUEUE,
     AutofillRetryWorkflow,
     RequeueFailedWorkflow,
@@ -37,14 +46,6 @@ from workflows.apply_recovery import (
 )
 
 _GH_URL = re.compile(r"https://job-boards\.greenhouse\.io/([^/]+)/jobs/(\d+)")
-
-
-class LogFailureInterceptor(Interceptor):
-    async def on_workflow_failed(self, wid: str, rid: str, error: str) -> None:
-        logging.error("WORKFLOW FAILED %s/%s: %s", wid, rid, error)
-
-    async def on_workflow_completed(self, wid: str, rid: str, result) -> None:
-        logging.info("WORKFLOW OK %s/%s  result=%s", wid, rid, result)
 
 
 def build_worker(client: Client) -> Worker:

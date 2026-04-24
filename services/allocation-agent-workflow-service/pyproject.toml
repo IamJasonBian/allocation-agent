@@ -1,0 +1,13 @@
+[project]
+name = "allocation-agent-workflow"
+version = "0.1.0"
+description = "In-process Temporal-shaped workflow harness for allocation-agent services."
+requires-python = ">=3.10"
+authors = [{ name = "Jason Bian" }]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["allocation_agent_workflow*"]
